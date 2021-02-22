@@ -3,92 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.79.0">
-    <title>Product example · Bootstrap v5.0</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
-
-
+    <title>Sanitas Groceries</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <style type="text/css">
-       table.products
-        {
-        margin-left: auto;
-        margin-right: auto;
-        }
-        .image {
-        opacity: 1;
-        display: block;
-        transition: .8s ease;
-        backface-visibility: hidden;
-        }
-        td:hover .image {
-        opacity: 0.5;
-        transition: 1s ease;
-        transition-timing-function: linear;
-        }
-
-        table:hover .mid{
-        opacity: 0;
-        }
-
-        td:hover .mid{
-        opacity: 1;
-        }
-
-        td .mid{
-        transition: 0.5s ease;
-        opacity: 0;
-        position: relative;
-        bottom: 200px;
-        text-align: center;
-        
-        background-color: #e2da0f;
-        color: black;
-        font-size: 20px;
-        }
-    </style>
+    <link href="assets/Home_Page/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $('#our-header').load('header.html');
+            $('#our-footer').load('footer.html');
+        });
+    </script>
 </head>
 <body>
 
-<header class="site-header sticky-top py-1">
-    <nav class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#" aria--mlabel="Product">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Snack</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-    </nav>
-</header>
+<div id="our-header"></div>
 
 <main>
-    <table class="products">
+  <div class="products" class="img-fluid">
+    <table>
     <tr>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/bananas.jpg"><div class="mid">
-            <div">
-            <a href="page2_1.html">Fruits and Vegetables</a>
+        <td><a href="./page2_1.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/bananas.jpg"><div class="mid">
+            <div>
+            Fruits and Vegetables
             </div>
+          </a>
         </div>
         </td>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/dairy.jpg">
+        <td><a href="./page2_1_Dairy.html"><img class="zoom" class="image"  width="267px" height="400px" src="./assets/Home_Page/imgs/dairy.jpg"></a>
         <div class="mid">
             <div>
             Dairy products
             </div>
         </div>
         </td>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/meatcrop.jpg">
+        <td><a href="./page2_1_Meat.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/meatcrop.jpg"></a>
         <div class="mid">
             <div>
             Meat & Poultry
@@ -97,82 +48,32 @@
         </td>
     </tr>
     <tr>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/bread.jpg">
+        <td><a href="./page2_BreadAndBakery.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/bread.jpg"></a>
         <div class="mid">
             <div>
             Bread & Bakery products
             </div>
         </div>
         </td>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/fish.jpg">
+        <td><a href="#"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/fish.jpg"></a>
         <div class="mid">
             <div>
             Fish & Seafood
             </div>
         </div>
         </td>
-        <td><img href="" class="image" width="267px" height="400px" src="./assets/imgs/frozen.jpg">
+        <td><a href="#"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/frozen.jpg"></a>
         <div class="mid">
             <div>
-            Frozen Foods
+            Frozen Food
             </div>
         </div>
         </td>
     </tr>
     </table>
-    
+  </div>
+
+
 </main>
 
-<footer class="container py-5">
-    <div class="row">
-        <div class="col-12 col-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-            <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Features</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="link-secondary" href="#">Cool stuff</a></li>
-                <li><a class="link-secondary" href="#">Random feature</a></li>
-                <li><a class="link-secondary" href="#">Team feature</a></li>
-                <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-                <li><a class="link-secondary" href="#">Another one</a></li>
-                <li><a class="link-secondary" href="#">Last time</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="link-secondary" href="#">Resource name</a></li>
-                <li><a class="link-secondary" href="#">Resource</a></li>
-                <li><a class="link-secondary" href="#">Another resource</a></li>
-                <li><a class="link-secondary" href="#">Final resource</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="link-secondary" href="#">Business</a></li>
-                <li><a class="link-secondary" href="#">Education</a></li>
-                <li><a class="link-secondary" href="#">Government</a></li>
-                <li><a class="link-secondary" href="#">Gaming</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="link-secondary" href="#">Team</a></li>
-                <li><a class="link-secondary" href="#">Locations</a></li>
-                <li><a class="link-secondary" href="#">Privacy</a></li>
-                <li><a class="link-secondary" href="#">Terms</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-
-
-</body>
-</html>
+<div id="our-footer"></div>

@@ -10,41 +10,6 @@ body {
     background-color: #f7f7f7;
 }
 
-.nav {
-    padding-top: 0px;
-    background: #fff;
-    height: auto;
-    width: 100%;
-    z-index: 150;
-    top: 0px;
-    position: sticky;
-    box-shadow: 0 2px 3px rgba(0,0,0,.4);
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(216, 213, 213, 0.562);
-    position: sticky;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: left;
-    border-right: 1px solid #bbb;
-}
-
-li a {
-    display: block;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .page-wrapper {
     height: 100%;
     display: table;
@@ -62,17 +27,19 @@ li a {
     background-color: #fff;
 }
 
-@media (max-width: 495.5px) {
-.element-wrapper {
-    width: 172.5px;
-}
+/* CSS for mobile resizing */
+@media (min-width: 480px) and (max-width: 767px) {
+    .element-wrapper {
+        width: 172.5px;
+    }
 }
 
-@media (max-width: 383.5px) {
-.element-wrapper {
-    width: 145px;
-    margin: 15px auto;
-}
+/* CSS for tablet resizing */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .element-wrapper {
+        width: 145px;
+        margin: 15px auto;
+    }
 }
 
 .element-wrapper:hover .add-to-cart {
@@ -107,7 +74,7 @@ li a {
     overflow: hidden;
     text-align: center;
 }
-    
+
 .h-bg {
     width: 660px;
     height: 100%;
@@ -216,25 +183,18 @@ li a {
     padding: 5px;
 }
 
-/* Pagination at the bottom of the page*/
-.pagination {
-    display: inline-block;
+/* CSS for mobile resizing */
+@media (min-width: 480px) and (max-width: 767px) {
+.column {
+    width: 172.5px;
+    }
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
+/* CSS for tablet resizing */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+.column {
+    width: 172.5px;
+    margin: 15px auto;
+    }
 }
 
-.pagination a.active {
-    background-color: #e2da0f;
-    color: white;
-    border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
-}
