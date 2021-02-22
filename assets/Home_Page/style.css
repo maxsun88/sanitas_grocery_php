@@ -1,0 +1,55 @@
+/*
+Ryan's CSS Aisles
+*/
+
+.products tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products th, .products td{
+  flex: 25%;
+  padding: 20px;
+}
+
+
+.products a
+{
+  color: black;
+}
+
+.products table
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+.products td, th {
+  padding: 20px;
+}
+.products .zoom {
+  opacity: 1;
+  display: block;
+  transition: 1.1s ease;
+  backface-visibility: hidden;
+}
+.products td:hover .mid{
+  transition: 0.5s ease;
+  opacity: 1
+}
+.products td .mid{
+  transition: 0.5s ease;
+  opacity: 0.4;
+  position: relative;
+  bottom: 200px;
+  text-align: center;
+
+  background-color: #e2da0f;
+  color: black;
+  font-size: 18px;
+}
+.products td, th {
+  transition: transform .4s;
+}
+.products td:hover, .products th:hover {
+  transform: scale(1.1);
+}
