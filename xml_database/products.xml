@@ -28,8 +28,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>lb</unit>
         <description>Healthy fruit</description>
         <types>Mexico;Malaysia;Peru</types>
-        <category>veg</category>
-        <img></img>
+        <img>null</img>
         <stock>512</stock>
     </product>
 
@@ -40,8 +39,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>each</unit>
         <description>Milk</description>
         <types>0%;2%;3.5%</types>
-        <category>dairy</category>
-        <img></img>
+        <img>null</img>
         <stock>200</stock>
     </product>
 
@@ -52,8 +50,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>each</unit>
         <description>Healthy meat</description>
         <types>normal;</types>
-        <category>meat</category>
-        <img></img>
+        <img>null</img>
         <stock>512</stock>
     </product>
 
@@ -64,8 +61,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>each</unit>
         <description>Classic</description>
         <types>Normal;</types>
-        <category>bakery</category>
-        <img></img>
+        <img>null</img>
         <stock>512</stock>
     </product>
 
@@ -76,8 +72,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>each</unit>
         <description>Healthy</description>
         <types>Boston;</types>
-        <category>seafood</category>
-        <img></img>
+        <img>null</img>
         <stock>512</stock>
     </product>
 
@@ -88,8 +83,7 @@ Note that there is no space in between two categories but divided by ;
         <unit>each</unit>
         <description>Healthy food</description>
         <types>Napoli;New York;Chicago</types>
-        <category>frozen</category>
-        <img></img>
+        <img>null</img>
         <stock>512</stock>
     </product>
 
