@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product category="veg" id="V01">
+    <name>Banana</name>
+    <price>1.29</price>
+    <unit>lb</unit>
+    <description>Healthy fruit</description>
+    <types>Mexico;Malaysia;Peru</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="dairy" id="D01">
+    <name>Milk - 1L</name>
+    <price>1.90</price>
+    <unit>each</unit>
+    <description>Milk</description>
+    <types>0%;2%;3.5%</types>
+    <img>null</img>
+    <stock>200</stock>
+  </product>
+  <product category="meat" id="M01">
+    <name>Lean Ground Beef</name>
+    <price>13.21</price>
+    <unit>each</unit>
+    <description>Healthy meat</description>
+    <types>normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="bakery" id="B01">
+    <name>French Baguette</name>
+    <price>3.19</price>
+    <unit>each</unit>
+    <description>Classic</description>
+    <types>Normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="seafood" id="S01">
+    <name>Lobster Cooked</name>
+    <price>31.29</price>
+    <unit>each</unit>
+    <description>Healthy</description>
+    <types>Boston;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+</products>
