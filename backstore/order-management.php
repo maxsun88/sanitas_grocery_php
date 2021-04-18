@@ -28,10 +28,10 @@ $orderList = getOrders();
 			<ul class="list-unstyled components">
 				<p>Back-Store Order Management</p>
 				<li>
-					<a href="backstore.html">Products</a>
+					<a href="./product-management.php">Products</a>
 				</li>
 				<li>
-					<a href="Page9.html">Users</a>
+					<a href="../Page9.php">Users</a>
 				</li>
 				<li>
 					<a href="#">Orders</a>
@@ -62,7 +62,8 @@ $orderList = getOrders();
 										<button class="btn btn-outline-success" type="submit">Search</button>
 									</form>
 								</div>
-								<table class="table table-bordered table-hover table-sm">
+								<div class="table-responsive-lg">
+								<table class="table table-bordered table-hover">
 									<thead class="thead-light">
 									<tr>
 										<th scope="col">Sequence Number</th>
@@ -83,14 +84,15 @@ $orderList = getOrders();
 										<td><?php echo $item->price.'$';?></td>
 										<td><?php echo $item->quantity;?></td>
 										<td>
-												<a href="create_edit_order.php"><button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-											<button type="button" class="btn btn-danger" href="orderHelper.inc.php?id=<?php echo $order['id'];?>&action=delete" ><i class="fas fa-trash-alt"></i></button>
+												<a href="../edit_add_order.php?id=<?php echo $item['id']; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+											<button type="button" class="btn btn-danger" href="orderHelper.inc.php?id=<?php echo $item['id'];?>&action=delete" ><i class="fas fa-trash-alt"></i></button>
 										</td>
 									</tr>
 									<?php endforeach; ?>
 									</tbody>
 								</table>
 								<button onclick="writeOrders()" class="btn btn-outline-secondary" type="submit">Save</button>
+								</div>
 							</div>
 						</div>
 					</div>
