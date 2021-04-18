@@ -32,6 +32,7 @@
                 exit();
             }
 
+            //Writes to users.xml
             $users_doc = new DOMDocument();
             $users_doc->preserveWhiteSpace = false;
             $users_doc->formatOutput = true;
@@ -65,6 +66,32 @@
             $users_doc->getElementsByTagName('users')->item(0)->appendChild($new_user);
 
             $users_doc->save("users.xml");
+
+
+            //Writes to Page9.xml
+            $user_doc = new DOMDocument();
+            $user_doc->preserveWhiteSpace = false;
+            $user_doc->formatOutput = true;
+            $user_doc->load("Page9.xml");
+            print $user_doc->saveXML();
+
+            $new_user = $user_doc->createElement("user");
+            $new_title = $user_doc->createElement("title", $title);
+            $new_firstName = $user_doc->createElement("firstName", $firstName);
+            $new_lastName = $user_doc->createElement("lastName", $lastName);
+            $new_streetAddress = $user_doc->createElement("streetAddress", $streetAddress);
+            $new_city = $user_doc->createElement("city", $city);
+            $new_postalCode = $user_doc->createElement("postalCode", $postalCode);
+            $new_user->appendChild($new_title);
+            $new_user->appendChild($new_firstName);
+            $new_user->appendChild($new_lastName);
+            $new_user->appendChild($new_streetAddress);
+            $new_user->appendChild($new_city);
+            $new_user->appendChild($new_postalCode);
+            
+            $user_doc->getElementsByTagName('users')->item(0)->appendChild($new_user);
+
+            $user_doc->save("Page9.xml");
 
         }
     ?>

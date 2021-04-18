@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
   <user category="admin" id="A01">
-      <title>Mr.</title>
-      <firstName>Robin</firstName>
-      <lastName>Laliberté-Beaupré</lastName>
-      <streetAddress>6 road street</streetAddress>
-      <city>New Town</city>
-      <postalCode>J5J 5J5</postalCode>
+    <title>Mr.</title>
+    <firstName>Robin</firstName>
+    <lastName>Laliberté-Beaupré</lastName>
+    <streetAddress>6 road street</streetAddress>
+    <city>New Town</city>
+    <postalCode>J5J 5J5</postalCode>
   </user>
   <user category="customer" id="C01">
-      <title>Miss</title>
-      <firstName>Jane</firstName>
-      <lastName>Doe</lastName>
-      <streetAddress>6 Road Street</streetAddress>
-      <city>New Town</city>
-      <postalCode>A1A 1A1</postalCode>
+    <title>Miss</title>
+    <firstName>Jane</firstName>
+    <lastName>Doe</lastName>
+    <streetAddress>6 Road Street</streetAddress>
+    <city>New Town</city>
+    <postalCode>A1A 1A1</postalCode>
   </user>
 </users>

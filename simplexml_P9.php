@@ -25,5 +25,5 @@ function writeUsers($userList){
         $user->appendChild( $dom->createElement('streetAddress', $item["streetAddress"]) );
         $user->appendChild( $dom->createElement('postalCode', $item["postalCode"]) );
     }
-    $dom->save('../xml_database/user_result.xml') or die('XML Create Error');
+    $dom->save('Page9.xml') or die('XML Create Error');
 }

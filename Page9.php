@@ -39,7 +39,7 @@
                 <a href="#">Users</a>
             </li>
             <li>
-                <a href="backstore_edit_order.html">Orders</a>
+                <a href="./backstore/order-management.php">Orders</a>
             </li>
         </ul>
     </nav>
@@ -76,7 +76,6 @@
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Street Address</th>
                                     <th scope="col">City</th>
-                                    <th scope="col">Address</th>
                                     <th scope="col">Postal Code</th>
                                 </tr>
                                 </thead>
@@ -92,7 +91,6 @@
                                       <td><?php echo $item->postalCode; ?></td>
                                       <td>
                                         <form>
-                                          <a class="btn btn-primary" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-eye"></i></a>
                                           <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
                                           <a class="btn btn-danger" href="productHelper.inc.php?id=<?php echo $item['id']; ?>&action=delete"><i class="fas fa-trash-alt"></i></a>
                                         </form>
