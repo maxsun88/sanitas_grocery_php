@@ -38,7 +38,7 @@
                   <a href="Page9.html">Users</a>
               </li>
               <li>
-                  <a href="backstore_edit_order.html">Orders</a>
+                  <a href="order-management.php">Orders</a>
               </li>
           </ul>
       </nav>
@@ -112,6 +112,7 @@
           </div>
       </div>
   </div>
+</div>
 
   <script type="text/javascript">
       $(document).ready(function () {

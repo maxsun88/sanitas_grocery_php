@@ -30,4 +30,19 @@
       <postalCode>A1A 1A1</postalCode>
     </personal>
   </user>
+  <user>
+    <login>
+      <email>ryan@hotmail.com</email>
+      <password>123</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>Ryan</firstName>
+      <lastName>Amstutz</lastName>
+      <streetAddress>123 Road House</streetAddress>
+      <city>Montreal</city>
+      <postalCode>H4N1C8</postalCode>
+    </personal>
+  </user>
 </users>
