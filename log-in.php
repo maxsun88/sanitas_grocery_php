@@ -14,25 +14,25 @@
         $password = $_POST['password'];
         
         $xmlDoc = new DOMDocument();
-        $xmlDoc->load("users.xml");
+        $xmlDoc->load("xml_database/users.xml");
 
         $users = $xmlDoc->getElementsByTagName('user');
 
         foreach ($users AS $element)
             {
                 $login_info = $element->getElementsByTagName('login')->item(0);
-                if($emailAddress == $login_info->getElementsByTagName('email')->item(0)->nodeValue)
+                if(strcasecmp($emailAddress, $login_info->getElementsByTagName('email')->item(0)->nodeValue) == 0)
                 {
                     print 'Found email <br/>';
                     if($password == $login_info->getElementsByTagName('password')->item(0)->nodeValue)
                     {
                         print 'Right password <br/>';
-                        if('True'==$login_info->getElementsByTagName('admin')->item(0)->nodeValue)
+                        if(strcasecmp('True', $login_info->getElementsByTagName('admin')->item(0)->nodeValue) == 0)
                         {
-                            header("Location: backstore.html");
+                            header("Location: backstore/product-management.php");
                             exit();
                         }
-                        header("Location: index.html");
+                        header("Location: index.php");
                         exit();
                     }
                 }

@@ -15,7 +15,7 @@ function writeUsers($userList){
     $dom->appendChild($root);
 
     foreach($userList as $item) {
-        $user = $dom->createElement('user');
+        $user = $dom->createElement('users');
         $root->appendChild($user);
         $user->setAttribute('category', $item["@attributes"]["category"]);
         $user->setAttribute('id', $item["@attributes"]["id"]);
@@ -25,5 +25,5 @@ function writeUsers($userList){
         $user->appendChild( $dom->createElement('streetAddress', $item["streetAddress"]) );
         $user->appendChild( $dom->createElement('postalCode', $item["postalCode"]) );
     }
-    $dom->save('../xml_database/user_result.xml') or die('XML Create Error');
+    $dom->save('Page9.xml') or die('XML Create Error');
 }
