@@ -16,4 +16,12 @@
     <city>New Town</city>
     <postalCode>A1A 1A1</postalCode>
   </user>
+  <user category="customer" id="C02">
+    <title>Miss</title>
+    <firstName>Iris</firstName>
+    <lastName>Radu</lastName>
+    <streetAddress>123 New Village</streetAddress>
+    <city>Laval</city>
+    <postalCode>H1N2C3</postalCode>
+  </user>
 </users>

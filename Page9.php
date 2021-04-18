@@ -99,7 +99,6 @@
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>
-                            <button class="btn btn-outline-secondary" type="submit">Save</button>
 
                         </div>
                     </div>

@@ -60,4 +60,19 @@
       <postalCode>A1A B1B</postalCode>
     </personal>
   </user>
+  <user>
+    <login>
+      <email>iris.radu@hotmail.com</email>
+      <password>123qwe</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Miss</title>
+      <firstName>Iris</firstName>
+      <lastName>Radu</lastName>
+      <streetAddress>123 New Village</streetAddress>
+      <city>Laval</city>
+      <postalCode>H1N2C3</postalCode>
+    </personal>
+  </user>
 </users>
