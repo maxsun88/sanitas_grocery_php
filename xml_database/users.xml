@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user>
+    <login>
+      <email>Robin_lb@hotmail.com</email>
+      <password>Password</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>Robin</firstName>
+      <lastName>Laliberté-Beaupré</lastName>
+      <streetAddress>6 road street</streetAddress>
+      <city>New Town</city>
+      <postalCode>J5J 5J5</postalCode>
+    </personal>
+  </user>
+  <user>
+    <login>
+      <email>Admin@Sanitas.com</email>
+      <password>Password</password>
+      <admin>true</admin>
+    </login>
+    <personal>
+      <title/>
+      <firstName/>
+      <lastName/>
+      <streetAddress/>
+      <city/>
+      <postalCode/>
+    </personal>
+  </user>
+  <user>
+    <login>
+      <email>User@email.com</email>
+      <password>User</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>New</firstName>
+      <lastName>Customer</lastName>
+      <streetAddress>1 User street</streetAddress>
+      <city>UserTown</city>
+      <postalCode>111 AAA</postalCode>
+    </personal>
+  </user>
+  <user>
+    <login>
+      <email>MyName@website.ca</email>
+      <password>MyPassword</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>My</firstName>
+      <lastName>Name</lastName>
+      <streetAddress>1 Road Avenue</streetAddress>
+      <city>Big Town</city>
+      <postalCode>A1A B1B</postalCode>
+    </personal>
+  </user>
+</users>
