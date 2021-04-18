@@ -26,7 +26,7 @@
       <!-- Sidebar  -->
       <nav id="sidebar">
           <div class="sidebar-header">
-              <a href="index.html"><h3>Sanitas Groceries</h3></a>
+              <a href="../index.php"><h3>Sanitas Groceries</h3></a>
           </div>
 
           <ul class="list-unstyled components">
@@ -35,10 +35,10 @@
                   <a href="#">Products</a>
               </li>
               <li>
-                  <a href="Page9.html">Users</a>
+                  <a href="../Page9.php">Users</a>
               </li>
               <li>
-                  <a href="backstore_edit_order.html">Orders</a>
+                  <a href="../backstore_edit_order.html">Orders</a>
               </li>
           </ul>
       </nav>
