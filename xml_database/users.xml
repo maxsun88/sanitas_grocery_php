@@ -75,4 +75,19 @@
       <postalCode>H1N2C3</postalCode>
     </personal>
   </user>
+  <user>
+    <login>
+      <email>random@hotmail.com</email>
+      <password>123qwe</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>Random</firstName>
+      <lastName>The</lastName>
+      <streetAddress>123 New Village</streetAddress>
+      <city>Laval</city>
+      <postalCode>H1N2C3</postalCode>
+    </personal>
+  </user>
 </users>

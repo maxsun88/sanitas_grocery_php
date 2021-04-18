@@ -3,7 +3,7 @@
 require_once 'simplexml_P9.php';
 
 $userList = getUsers();
-$userList = json_decode(json_encode((array)$userList), TRUE)["user"];
+$userList = json_decode(json_encode((array)$userList), TRUE)["users"];
 
 
 $user_id = isset($_GET['id']) ? $_GET['id'] : null;
