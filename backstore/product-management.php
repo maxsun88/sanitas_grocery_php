@@ -70,7 +70,7 @@
                               <input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
                           </form>
-                          <a style="font-size: 2rem" class="btn" href="product-edit.php"><i class="far fa-plus-square"></i></a>
+                          <a style="font-size: 2rem" class="btn" href="product-edit.php?action=insert"><i class="far fa-plus-square"></i></a>
                       </div>
 
                       <div class="table-responsive-lg">
@@ -99,7 +99,9 @@
                                         <form>
                                           <a class="btn btn-primary" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-eye"></i></a>
                                           <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
-                                          <a class="btn btn-danger" href="productHelper.inc.php?id=<?php echo $item['id']; ?>&action=delete"><i class="fas fa-trash-alt"></i></a>
+                                          <a class="btn btn-danger" href="javascript:confirmDelete(<?php echo "'" . $item['id'] . "','" . $item->name . "'";?>) ">
+                                            <i class="fas fa-trash-alt"></i>
+                                          </a>
                                         </form>
                                       </td>
                                   </tr>
@@ -115,6 +117,13 @@
 </div>
 
   <script type="text/javascript">
+      function confirmDelete(id, name) {
+          var r = window.confirm("Confirm deleting product: " + name);
+          if (r == true) {
+              window.location.href = "productHelper.inc.php?id="+id+"&action=delete";
+          }
+      }
+
       $(document).ready(function () {
           $("#sidebar").mCustomScrollbar({
               theme: "minimal"

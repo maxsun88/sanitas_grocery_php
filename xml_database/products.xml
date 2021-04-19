@@ -3,12 +3,12 @@
 Naming Rules:
 
 Category Names:
-veg     - ID example V01
-dairy   - ID example D01
-meat    - ID example M01
-bakery  - ID example B01
-seafood - ID example S01
-frozen  - ID example F01
+veg     - ID example V1
+dairy   - ID example D1
+meat    - ID example M1
+bakery  - ID example B1
+seafood - ID example S1
+frozen  - ID example F1
 
 Unit Names:
 lb
@@ -19,10 +19,9 @@ e.g. Mexico;Malaysia;Peru
 Note that there is no space in between two categories but divided by ;
 
 -->
-
 <products>
     <!-- Fruit and Vegetables -->
-    <product category="veg" id="V01">
+    <product category="veg" id="V1">
         <name>Banana</name>
         <price>1.29</price>
         <unit>lb</unit>
@@ -33,7 +32,7 @@ Note that there is no space in between two categories but divided by ;
     </product>
 
     <!-- Dairy Products -->
-    <product category="dairy" id="D01">
+    <product category="dairy" id="D1">
         <name>Milk - 1L</name>
         <price>1.90</price>
         <unit>each</unit>
@@ -44,7 +43,7 @@ Note that there is no space in between two categories but divided by ;
     </product>
 
     <!-- Meat and Poultry -->
-    <product category="meat" id="M01">
+    <product category="meat" id="M1">
         <name>Lean Ground Beef</name>
         <price>13.21</price>
         <unit>each</unit>
@@ -55,7 +54,7 @@ Note that there is no space in between two categories but divided by ;
     </product>
 
     <!-- Bakery -->
-    <product category="bakery" id="B01">
+    <product category="bakery" id="B1">
         <name>French Baguette</name>
         <price>3.19</price>
         <unit>each</unit>
@@ -66,7 +65,7 @@ Note that there is no space in between two categories but divided by ;
     </product>
 
     <!-- Sea Food -->
-    <product category="seafood" id="S01">
+    <product category="seafood" id="S1">
         <name>Lobster Cooked</name>
         <price>31.29</price>
         <unit>each</unit>
@@ -77,7 +76,7 @@ Note that there is no space in between two categories but divided by ;
     </product>
 
     <!-- Froze -->
-    <product category="frozen" id="F01">
+    <product category="frozen" id="F1">
         <name>Frozen Pizza</name>
         <price>5.6</price>
         <unit>each</unit>

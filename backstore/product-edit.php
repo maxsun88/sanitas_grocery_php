@@ -48,7 +48,10 @@
                             Product Edit
                         </div>
                         <div class="card-body">
-                            <form>
+                            <?php
+                                $action = isset($_GET['action']) ? $_GET['action'] : null;
+                            ?>
+                            <form action="productHelper.inc.php?action=<?php echo $action;?>" method="post">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Product Name</label>
                                     <div class="col-sm-10">
@@ -57,7 +60,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Example select</label>
+                                    <label class="col-sm-2 col-form-label">Category</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="category">
                                             <option value="veg">Fruits & Vegetables</option>
@@ -87,7 +90,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Image URL</label>
                                     <div class="col-sm-10">
-                                        <input type="url" class="form-control" name="img" placeholder="">
+                                        <input type="text" class="form-control" name="img" placeholder="">
                                     </div>
                                 </div>
 
@@ -104,6 +107,13 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Stock</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" name="stock" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <div class="col-sm-12" style="text-align: end">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <button type="button" class="btn btn-secondary">Cancel</button>
@@ -117,12 +127,6 @@
         </div>
     </div>
 </div>
-
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--&lt;!&ndash; jQuery Custom Scroller CDN &ndash;&gt;-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>-->
-
 
 <script type="text/javascript">
     $(document).ready(function () {

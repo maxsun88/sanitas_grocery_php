@@ -4,8 +4,12 @@
 <?php
 
 function getProducts(){
-    $xml=simplexml_load_file("../xml_database/products.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file("../xml_database/product_result.xml") or die("Error: Cannot create object");
     return $xml;
+}
+
+function getProductsByCategory(){
+
 }
 
 function writeProducts($productList){
