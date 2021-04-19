@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="../assets/Backstore/backstore.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -71,6 +70,7 @@
                               <input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
                           </form>
+                          <a style="font-size: 2rem" class="btn" href="product-edit.php"><i class="far fa-plus-square"></i></a>
                       </div>
 
                       <div class="table-responsive-lg">
@@ -88,7 +88,7 @@
                               </thead>
                               <tbody>
                                 <?php foreach ($productList->product as $item) :?>
-                                  <tr>
+                                   <tr>
                                       <th scope="row"><?php echo $item['id']; ?></th>
                                       <td><?php echo $item->name; ?></td>
                                       <td><?php echo $item->price; ?></td>
