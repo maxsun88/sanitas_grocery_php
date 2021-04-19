@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
-  <product category="veg" id="V1">
-    <name>Apple</name>
-    <price>1</price>
-    <unit>each</unit>
-    <description>From Japan</description>
-    <types>Fuji;</types>
-    <img>sdf.img</img>
-    <stock>100</stock>
-  </product>
   <product category="frozen" id="F2">
     <name>Ice Cream</name>
     <price>10</price>

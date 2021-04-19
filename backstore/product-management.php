@@ -99,7 +99,7 @@
                                         <form>
                                           <a class="btn btn-primary" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-eye"></i></a>
                                           <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
-                                          <a class="btn btn-danger" href="javascript:confirmDelete(<?php echo "'" . $item['id'] . "','" . $item->name . "'";?>) ">
+                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item['id'];?>' , '<?php echo$item->name;?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>
                                         </form>
