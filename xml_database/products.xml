@@ -1,89 +1,174 @@
-<?xml version='1.0'?>
-<!--
-Naming Rules:
-
-Category Names:
-veg     - ID example V1
-dairy   - ID example D1
-meat    - ID example M1
-bakery  - ID example B1
-seafood - ID example S1
-frozen  - ID example F1
-
-Unit Names:
-lb
-each
-
-Types:
-e.g. Mexico;Malaysia;Peru
-Note that there is no space in between two categories but divided by ;
-
--->
+<?xml version="1.0" encoding="UTF-8"?>
 <products>
-    <!-- Fruit and Vegetables -->
-    <product category="veg" id="V1">
-        <name>Banana</name>
-        <price>1.29</price>
-        <unit>lb</unit>
-        <description>Healthy fruit</description>
-        <types>Mexico;Malaysia;Peru</types>
-        <img>null</img>
-        <stock>512</stock>
-    </product>
-
-    <!-- Dairy Products -->
-    <product category="dairy" id="D1">
-        <name>Milk - 1L</name>
-        <price>1.90</price>
-        <unit>each</unit>
-        <description>Milk</description>
-        <types>0%;2%;3.5%</types>
-        <img>null</img>
-        <stock>200</stock>
-    </product>
-
-    <!-- Meat and Poultry -->
-    <product category="meat" id="M1">
-        <name>Lean Ground Beef</name>
-        <price>13.21</price>
-        <unit>each</unit>
-        <description>Healthy meat</description>
-        <types>normal;</types>
-        <img>null</img>
-        <stock>512</stock>
-    </product>
-
-    <!-- Bakery -->
-    <product category="bakery" id="B1">
-        <name>French Baguette</name>
-        <price>3.19</price>
-        <unit>each</unit>
-        <description>Classic</description>
-        <types>Normal;</types>
-        <img>null</img>
-        <stock>512</stock>
-    </product>
-
-    <!-- Sea Food -->
-    <product category="seafood" id="S1">
-        <name>Lobster Cooked</name>
-        <price>31.29</price>
-        <unit>each</unit>
-        <description>Healthy</description>
-        <types>Boston;</types>
-        <img>null</img>
-        <stock>512</stock>
-    </product>
-
-    <!-- Froze -->
-    <product category="frozen" id="F1">
-        <name>Frozen Pizza</name>
-        <price>5.6</price>
-        <unit>each</unit>
-        <description>Healthy food</description>
-        <types>Napoli;New York;Chicago</types>
-        <img>null</img>
-        <stock>512</stock>
-    </product>
-
+  <product category="veg" id="V1">
+    <name>Banana</name>
+    <price>1.29</price>
+    <unit>lb</unit>
+    <description>Healthy fruit</description>
+    <types>Mexico;Malaysia;Peru</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="dairy" id="D1">
+    <name>Milk - 1L</name>
+    <price>1.90</price>
+    <unit>each</unit>
+    <description>Milk</description>
+    <types>0%;2%;3.5%</types>
+    <img>null</img>
+    <stock>200</stock>
+  </product>
+  <product category="meat" id="M1">
+    <name>Lean Ground Beef</name>
+    <price>13.21</price>
+    <unit>each</unit>
+    <description>Healthy meat</description>
+    <types>normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="bakery" id="B1">
+    <name>French Baguette</name>
+    <price>3.19</price>
+    <unit>each</unit>
+    <description>Classic</description>
+    <types>Normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="frozen" id="F1">
+    <name>Frozen Pizza</name>
+    <price>5.6</price>
+    <unit>each</unit>
+    <description>Healthy food</description>
+    <types>Napoli;New York;Chicago</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="seafood" id="S2">
+    <name>Frozen Crab</name>
+    <price>6.99</price>
+    <unit>each</unit>
+    <description>default</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/crab_frozen.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S3">
+    <name>Flake style crab</name>
+    <price>0.82</price>
+    <unit>each</unit>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/crab_flavoured_seafood.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S4">
+    <name>Frozen Seasoned Seafood Skewer</name>
+    <price>12.2</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/seafood_skewer.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S5">
+    <name>Canadian Atlantic Salmon Fillet</name>
+    <price>4.99</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/salmon.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S6">
+    <name>Crab flavoured pollock flakes</name>
+    <price>12.3</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/crab_flavoured_pollock.jpg</img>
+    <stock>36</stock>
+  </product>
+  <product category="seafood" id="S7">
+    <name>South American steelhead</name>
+    <price>12.4</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/salmon_trout_tuna.jpg</img>
+    <stock>120</stock>
+  </product>
+  <product category="seafood" id="S8">
+    <name>Fresh Atlantic Salmon Steak</name>
+    <price>0.56</price>
+    <unit>100g</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/atlantic_salmon_steak.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S9">
+    <name>Sliced smoked steelhead salmon</name>
+    <price>0.88</price>
+    <unit>100g</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/sliced_smoked_steelhead_salmon.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S10">
+    <name>Previously frozen or fresh haddock fillet</name>
+    <price>4.99</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/frozen_or_fresh_haddock_fillet.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S11">
+    <name>Oyster</name>
+    <price>3.99</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/oyster.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S12">
+    <name>Fresh Canadian Atlantic Salmon Fillet, Value Pack</name>
+    <price>10.0</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/salmon-fillet-value.jpg</img>
+    <stock>180</stock>
+  </product>
+  <product category="seafood" id="S13">
+    <name>Live Lobster</name>
+    <price>30.99</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/lobster.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="seafood" id="S14">
+    <name>Lobster cooked</name>
+    <price>4.99</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/lobster_cooked.jpg</img>
+    <stock>10</stock>
+  </product>
+  <product category="seafood" id="S15">
+    <name>Frozen Shrimp</name>
+    <price>30.1</price>
+    <unit>each</unit>
+    <description>example</description>
+    <types>normal;extra</types>
+    <img>assets/Page2/imgs/frozen_shrimp.jpg</img>
+    <stock>100</stock>
+  </product>
 </products>

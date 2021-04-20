@@ -1,6 +1,6 @@
 <?php
     require_once '../xml_database/simplexml.php';
-    $tab = isset($_GET['tab']) ? $_GET['tab'] : 'veg';
+    $tab = isset($_GET['tab']) ? $_GET['tab'] : 'seafood';
     $productList = getProductsByCategory($tab);
 ?>
 
