@@ -5,11 +5,18 @@
 
 function getProducts(){
     $xml=simplexml_load_file("../xml_database/product_result.xml") or die("Error: Cannot create object");
-    return $xml;
+    return json_decode(json_encode((array)$xml), TRUE)["product"];
 }
 
-function getProductsByCategory(){
-
+function getProductsByCategory($category){
+    $productList = getProducts();
+    $productsSameCat = array(); //products of the same category
+    foreach($productList as $item) {
+        if($item["@attributes"]["category"] == $category){
+            $productsSameCat[] = $item;
+        }
+    }
+    return $productsSameCat;
 }
 
 function writeProducts($productList){

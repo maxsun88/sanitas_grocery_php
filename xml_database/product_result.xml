@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
-  <product category="frozen" id="F2">
-    <name>Ice Cream</name>
-    <price>10</price>
-    <unit>each</unit>
-    <description>111</description>
-    <types>aa;</types>
+  <product category="veg" id="V1">
+    <name>Banana</name>
+    <price>1.29</price>
+    <unit>lb</unit>
+    <description>Healthy fruit</description>
+    <types>Mexico;Malaysia;Peru</types>
     <img>null</img>
-    <stock>100</stock>
+    <stock>512</stock>
+  </product>
+  <product category="dairy" id="D1">
+    <name>Milk - 1L</name>
+    <price>1.90</price>
+    <unit>each</unit>
+    <description>Milk</description>
+    <types>0%;2%;3.5%</types>
+    <img>null</img>
+    <stock>200</stock>
+  </product>
+  <product category="meat" id="M1">
+    <name>Lean Ground Beef</name>
+    <price>13.21</price>
+    <unit>each</unit>
+    <description>Healthy meat</description>
+    <types>normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="bakery" id="B1">
+    <name>French Baguette</name>
+    <price>3.19</price>
+    <unit>each</unit>
+    <description>Classic</description>
+    <types>Normal;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="seafood" id="S1">
+    <name>Lobster Cooked</name>
+    <price>31.29</price>
+    <unit>each</unit>
+    <description>Healthy</description>
+    <types>Boston;</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="frozen" id="F1">
+    <name>Frozen Pizza</name>
+    <price>5.6</price>
+    <unit>each</unit>
+    <description>Healthy food</description>
+    <types>Napoli;New York;Chicago</types>
+    <img>null</img>
+    <stock>512</stock>
+  </product>
+  <product category="veg" id="V2">
+    <name>Cucumber</name>
+    <price>1</price>
+    <unit>each</unit>
+    <description>haha</description>
+    <types>Fuji;</types>
+    <img>null</img>
+    <stock>123</stock>
   </product>
 </products>

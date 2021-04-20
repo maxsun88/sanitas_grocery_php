@@ -3,8 +3,6 @@
 require_once '../xml_database/simplexml.php';
 
 $productList = getProducts();
-$productList = json_decode(json_encode((array)$productList), TRUE)["product"];
-
 
 $product_id = isset($_GET['id']) ? $_GET['id'] : null;
 $action = isset($_GET['action']) ? $_GET['action'] : null;
@@ -22,13 +20,7 @@ if($action=="delete"){
 }
 if($action=="insert"){
     //Obtaining a new id for this product inserted
-    $productsSameCat = array(); //products of the same category
-    foreach($productList as $item) {
-        if($item["@attributes"]["category"]==$_POST["category"]){
-            $productsSameCat[] = $item;
-        }
-    }
-
+    $productsSameCat = getProductsByCategory($_POST["category"]);
     if(count($productsSameCat) > 0){
         $lastId = end($productsSameCat)["@attributes"]["id"];
         $newId = $lastId[0] . strval(intval(substr($lastId, 1))+1);
@@ -52,7 +44,6 @@ if($action=="insert"){
                 break;
         }
     }
-
 
     $newProduct = array();
     $newProduct["@attributes"]["category"] = $_POST["category"];

@@ -1,6 +1,7 @@
 <?php
-  require_once '../xml_database/simplexml.php';
-  $productList = getProducts();
+    require_once '../xml_database/simplexml.php';
+    $tab = isset($_GET['tab']) ? $_GET['tab'] : 'veg';
+    $productList = getProductsByCategory($tab);
 ?>
 
 <html>
@@ -13,12 +14,15 @@
     <title>Back Store</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link href="../bootstrap-v4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../assets/Backstore/backstore.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 </head>
 <body>
   <div class="wrapper">
@@ -51,21 +55,16 @@
                   </div>
                   <div class="card-body">
                       <div class="d-flex justify-content-between my-3">
-                          <ul class="nav nav-tabs">
-                              <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="#">Vegetables</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">Meat</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">Dairy Product</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">Frozen</a>
-                              </li>
-                          </ul>
-
+                          <nav>
+                              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                  <a class="nav-item nav-link <?php if($tab=='veg') :?>active<?php endif; ?>"  href="product-management.php?tab=veg" role="tab" aria-selected="true">Vegetables</a>
+                                  <a class="nav-item nav-link <?php if($tab=='meat') :?>active<?php endif; ?>" href="product-management.php?tab=meat" role="tab" aria-selected="false">Meat</a>
+                                  <a class="nav-item nav-link <?php if($tab=='dairy') :?>active<?php endif; ?>" href="product-management.php?tab=dairy" role="tab" aria-selected="false">Dairy</a>
+                                  <a class="nav-item nav-link <?php if($tab=='bakery') :?>active<?php endif; ?>" href="product-management.php?tab=bakery" role="tab" aria-selected="false">Bakery</a>
+                                  <a class="nav-item nav-link <?php if($tab=='frozen') :?>active<?php endif; ?>" href="product-management.php?tab=frozen" role="tab" aria-selected="false">Frozen</a>
+                                  <a class="nav-item nav-link <?php if($tab=='seafood') :?>active<?php endif; ?>" href="product-management.php?tab=seafood" role="tab" aria-selected="false">Seafood</a>
+                              </div>
+                          </nav>
                           <form class="d-flex">
                               <input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
@@ -87,19 +86,19 @@
                               </tr>
                               </thead>
                               <tbody>
-                                <?php foreach ($productList->product as $item) :?>
+                                <?php foreach ($productList as $item) :?>
                                    <tr>
-                                      <th scope="row"><?php echo $item['id']; ?></th>
-                                      <td><?php echo $item->name; ?></td>
-                                      <td><?php echo $item->price; ?></td>
-                                      <td><?php echo $item->unit; ?></td>
-                                      <td><?php echo $item->description; ?></td>
-                                      <td><?php echo $item->stock; ?></td>
+                                      <th scope="row"><?php echo $item["@attributes"]["id"]; ?></th>
+                                      <td><?php echo $item["name"]; ?></td>
+                                      <td><?php echo $item["price"]; ?></td>
+                                      <td><?php echo $item["unit"]; ?></td>
+                                      <td><?php echo $item["description"]; ?></td>
+                                      <td><?php echo $item["stock"]; ?></td>
                                       <td>
                                         <form>
                                           <a class="btn btn-primary" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-eye"></i></a>
                                           <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
-                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item['id'];?>' , '<?php echo$item->name;?>') ">
+                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["name"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>
                                         </form>
@@ -117,6 +116,7 @@
 </div>
 
   <script type="text/javascript">
+
       function confirmDelete(id, name) {
           var r = window.confirm("Confirm deleting product: " + name);
           if (r == true) {
@@ -136,10 +136,11 @@
           });
       });
 
-
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
