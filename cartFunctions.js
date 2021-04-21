@@ -8,7 +8,7 @@ function cartFunction(){
 	var removeFromCartButtons = document.getElementsByClassName('cart-remove-btn');
 	for (var i = 0; i<removeFromCartButtons.length; i++){
 		var button = removeFromCartButtons[i];
-		button.addEventListener('click', removeItem(event));
+		button.addEventListener('click', removeItem);
 	}
 	
 	document.getElementsByClassName('purchase-btn')[0].addEventListener('click', purchaseClicked);
@@ -17,21 +17,24 @@ function cartFunction(){
 }
 
 function removeItem(event){
-	console.log("remove " + event);
 	var buttonClicked = event.target;
-	buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
-	cartPrice();
+	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+	productPrice();
 }
 
 function addItemsToCart(){
 	var productList = getProductCookies();
-	console.log("adding to cart: " + productList);
 	if (productList.length == 0){
 		return;
 	}
-	var cartRow = document.createElement('div');
+	
 	var cartItems = document.getElementsByClassName('cart-items')[0];
 	for (var i = 0; i < productList.length; i++){
+		console.log(productList[i]);
+		if (productList[i] == ""){
+			break;
+		}
+		var cartRow = document.createElement('div');
 		var cartRowContent = ` <div class="row mb-4">
 								<div class="col-md-5 col-lg-3 col-xl-3">
 									<div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -47,12 +50,12 @@ function addItemsToCart(){
 											<div>
 												<h5>${productList[i][0]}</h5>
 												<p class="mb-2 text-muted text-uppercase small weight">190g avg.</p>
-												<p class="mb-2 text-muted text-uppercase small price-per-kg">${productList[i][1]} /kg</p>
+												<p class="mb-2 text-muted text-uppercase small price-per-kg">$${productList[i][1]} /kg</p>
 												<p class="mb-2 text-muted text-uppercase small price-per-lb">$${(productList[i][1]*2.20462).toFixed(2)} /lb</p>
 											</div>
 											<div>
 												<div class="def-number-input number-input safari_only mb-0 w-100">
-													<input class="form-control" class="quantity" min="1" id="quantity0" name="quantity" value="${productList[i][3]}" type="number" onclick="productPrice()">
+													<input class="form-control" class="quantity" min="1" id="quantity${i}" name="quantity" value="${productList[i][3]}" type="number" onclick="productPrice()">
 													<select class="form-control my-2" id="sel1">
 														<option value="data4">Brazil</option>
 														<option value="data5">Mexico</option>
@@ -63,8 +66,8 @@ function addItemsToCart(){
 										</div>
 										<div class="d-flex justify-content-between align-items-center"></div>
 											<div>
-												<a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3 mb-4"> Remove item </a>
-												<p class="mb-0"><span><strong class="price" id="summary${i}">"$"${(productList[i][1]*productList[i][3]).toFixed(2)}</strong></span></p class="mb-0">
+												<a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3 mb-4 cart-remove-btn"> Remove item </a>
+												<p class="mb-0"><span><strong class="price" id="summary${i}">$${(productList[i][1]*productList[i][3]).toFixed(2)}</strong></span></p class="mb-0">
 											</div>
 										</div>
 									</div>
@@ -72,7 +75,7 @@ function addItemsToCart(){
 							<hr class="mb-4">`;
 		cartRow.innerHTML = cartRowContent;
 		cartItems.append(cartRow);
-		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem(event));
+		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem);
 	}
 	productPrice();
 }
@@ -85,7 +88,7 @@ function addItemsToCart(){
 	}
 	storedProducts = storedProducts.split(']');
 	for(var i = 0; i < storedProducts.length; i++) {
-	  storedProducts[i].split(",");
+	  storedProducts[i] = storedProducts[i].split(",");
 	  productList.push(storedProducts[i]);
 	}
 	return productList;
