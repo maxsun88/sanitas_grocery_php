@@ -12,9 +12,12 @@ function cartFunction(){
 	}
 	
 	document.getElementsByClassName('purchase-btn')[0].addEventListener('click', purchaseClicked);
+
+	addItemsToCart();
 }
 
 function removeItem(event){
+	console.log("remove " + event);
 	var buttonClicked = event.target;
 	buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
 	cartPrice();
@@ -22,6 +25,7 @@ function removeItem(event){
 
 function addItemsToCart(){
 	var productList = getProductCookies();
+	console.log("adding to cart: " + productList);
 	if (productList.length == 0){
 		return;
 	}
