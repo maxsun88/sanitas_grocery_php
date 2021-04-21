@@ -84,7 +84,7 @@ function addItemsToCart(){
 		return "";
 	}
 	storedProducts = storedProducts.split(']');
-	for(var i = 0; i <ca.length; i++) {
+	for(var i = 0; i < storedProducts.length; i++) {
 	  storedProducts[i].split(",");
 	  productList.push(storedProducts[i]);
 	}
