@@ -96,8 +96,8 @@
                                       <td><?php echo $item["stock"]; ?></td>
                                       <td>
                                         <form>
-                                          <a class="btn btn-primary" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-eye"></i></a>
-                                          <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
+                                          <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i></a>
+                                          <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
                                           <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["name"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>

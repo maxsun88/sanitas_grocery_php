@@ -62,4 +62,7 @@ if($action=="insert"){
     writeProducts($productList);
 }
 
+if (isset($_SERVER["HTTP_REFERER"])) {
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+}
 header("location: product-management.php");
