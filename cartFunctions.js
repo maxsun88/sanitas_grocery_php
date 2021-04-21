@@ -77,7 +77,7 @@ function addItemsToCart(){
 	productPrice();
 }
 
-  function getProductCookie() {
+  function getProductCookies() {
 	var storedProducts = window.sessionStorage.getItem("product");
 	var productList = [];
 	if (!storedProducts){
