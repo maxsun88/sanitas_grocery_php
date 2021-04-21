@@ -8,7 +8,7 @@ function cartFunction(){
 	var removeFromCartButtons = document.getElementsByClassName('cart-remove-btn');
 	for (var i = 0; i<removeFromCartButtons.length; i++){
 		var button = removeFromCartButtons[i];
-		button.addEventListener('click', removeItem);
+		button.addEventListener('click', removeItem(event));
 	}
 	
 	document.getElementsByClassName('purchase-btn')[0].addEventListener('click', purchaseClicked);
@@ -16,7 +16,7 @@ function cartFunction(){
 
 function removeItem(event){
 	var buttonClicked = event.target;
-	buttonClicked.parentElement.parentElement.parentElement.remove();
+	buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
 	cartPrice();
 }
 
@@ -68,7 +68,7 @@ function addItemsToCart(){
 							<hr class="mb-4">`;
 		cartRow.innerHTML = cartRowContent;
 		cartItems.append(cartRow);
-		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem);
+		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem(event));
 	}
 	productPrice();
 }
