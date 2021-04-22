@@ -29,15 +29,12 @@ function addToCartButton(event){
 
 function setProductCookie(title, price, image, amount) {
     if (window.sessionStorage.getItem("product") != null && window.sessionStorage.getItem("product").indexOf(title) >= 0){
-        alert("This item is already in your cart.")
-        console.log(window.sessionStorage.getItem("product"));
-        return ;
+        alert("This item is already in your cart.");
+        return;
     }
     if (window.sessionStorage.getItem("product")){
         window.sessionStorage.setItem("product", window.sessionStorage.getItem("product") + title + "," + price + "," + image + "," + amount + "]");
-        console.log(window.sessionStorage.getItem("product"));
-        return ;
+        return;
     }
     window.sessionStorage.setItem("product", title + "," + price + "," + image + "," + amount + "]");
-    console.log(window.sessionStorage.getItem("product"));
 }

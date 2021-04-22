@@ -18,7 +18,22 @@ function cartFunction(){
 
 function removeItem(event){
 	var buttonClicked = event.target;
+	var buttonProduct = buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement;
+	var name = buttonProduct.getElementsByClassName("p-name")[0].innerText;
 	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+	var productList = getProductCookies();
+	console.log(productList);
+	var newList = "product=";
+	for (var i = 0; i < productList.length; i++){
+		if (productList[i][0] != name){
+			newList += productList[i][0];
+			newList += "," + productList[i][1];
+			newList += "," + productList[i][2];
+			newList += "," + productList[i][3] + "]";
+		}
+	}
+	console.log(newList);
+	window.sessionStorage.setItem("product", newList);
 	productPrice();
 }
 
@@ -29,8 +44,8 @@ function addItemsToCart(){
 	}
 	
 	var cartItems = document.getElementsByClassName('cart-items')[0];
+	cartItems.innerText = "Cart (" + productList.length + " items)";
 	for (var i = 0; i < productList.length; i++){
-		console.log(productList[i]);
 		if (productList[i] == ""){
 			break;
 		}
@@ -38,7 +53,7 @@ function addItemsToCart(){
 		var cartRowContent = ` <div class="row mb-4">
 								<div class="col-md-5 col-lg-3 col-xl-3">
 									<div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-										<img class="img-fluid w-100" src=${productList[i][2]}>
+										<img class="img-fluid w-100 img" src=${productList[i][2]}>
 	  										<a href="#!">
 												<div class="mask"></div>
 											</a>
@@ -48,7 +63,7 @@ function addItemsToCart(){
 									<div>
 										<div class="d-flex justify-content-between">
 											<div>
-												<h5>${productList[i][0]}</h5>
+												<h5 class="p-name">${productList[i][0]}</h5>
 												<p class="mb-2 text-muted text-uppercase small weight">190g avg.</p>
 												<p class="mb-2 text-muted text-uppercase small price-per-kg">$${productList[i][1]} /kg</p>
 												<p class="mb-2 text-muted text-uppercase small price-per-lb">$${(productList[i][1]*2.20462).toFixed(2)} /lb</p>
@@ -100,33 +115,34 @@ function purchaseClicked(){
 	while (cartItems.hasChildNodes()){
 		cartItems.removeChild(cartItems.firstChild);
 	}
+	window.sessionStorage.removeItem("product");
 	cartPrice();
 }
 
 function productPrice(){
-	var pricePerUnitList=document.getElementsByClassName('price-per-kg');
-	var totalPerProductList=new Array(pricePerUnitList.length);
-	var i=0;
-	for (i;i<totalPerProductList.length;i++){
-		totalPerProductList[i]= parseFloat(pricePerUnitList[i].innerText.substring(1)) * document.getElementById(('quantity'+i)).value;
-		document.getElementById("summary"+i).innerText="$"+totalPerProductList[i].toFixed(2);
+	var pricePerUnitList = document.getElementsByClassName('price-per-kg');
+	var totalPerProductList = new Array(pricePerUnitList.length);
+	var i = 0;
+	for (i; i < totalPerProductList.length; i++){
+		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * document.getElementsByClassName('quantity')[i].value;
+		document.getElementsByClassName("summary")[i].innerText = "$" + totalPerProductList[i].toFixed(2);
 	}
 	cartPrice();
 }
         
 function cartPrice(){
-	var productPriceList=document.getElementsByClassName('price');
+	var productPriceList = document.getElementsByClassName('price');
 	var i;
-	var sum=0.0;
-	for(i=0;i<productPriceList.length;i++){
+	var sum = 0.0;
+	for(i = 0; i < productPriceList.length; i++){
 		sum += parseFloat(productPriceList[i].innerText.substring(1));
 	}
-	var gst=sum*0.05;
-	var qst=sum*0.15;
-	var total=sum+gst+qst;
+	var gst = sum * 0.05;
+	var qst = sum * 0.15;
+	var total = sum + gst + qst;
 
-	document.getElementById("subtotal").innerText="$"+sum.toFixed(2);
-	document.getElementById("gst").innerText="$"+gst.toFixed(2);
-	document.getElementById("qst").innerText="$"+qst.toFixed(2);
-	document.getElementById("total").innerText="$"+total.toFixed(2);
+	document.getElementById("subtotal").innerText = "$" + sum.toFixed(2);
+	document.getElementById("gst").innerText = "$" + gst.toFixed(2);
+	document.getElementById("qst").innerText = "$" + qst.toFixed(2);
+	document.getElementById("total").innerText = "$" + total.toFixed(2);
 }
