@@ -1,86 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sanitas Groceries</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-v4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-v4/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="assets/Header/header.css" rel="stylesheet" />
+    <link href="assets/Header/header.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css" />
-  </head>
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+</head>
 
-  <body>
-    <header>
-      <div class="p-1" id="topHeader">
+<body>
+<header>
+    <div class="p-1" id="topHeader">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-6 mr-auto contact">
-              <a class="p-1" href="tel:+4383969433">
-                <i class="fas fa-phone"></i> tel:+4383969434
-              </a>
-              <a class="p-1" href="mailto:sanita_grocery@gmail.com">
-                <i class="fas fa-envelope"></i> sanita_grocery@gmail.com
-              </a>
+            <div class="row">
+                <div class="col-lg-6 mr-auto contact">
+                    <a class="p-1" href="tel:+4383969433"> <i class="fas fa-phone"></i> tel:+4383969434 </a>
+                    <a class="p-1" href="mailto:sanita_grocery@gmail.com"> <i class="fas fa-envelope"></i> sanita_grocery@gmail.com </a>
+                </div>
+                <div class="col-lg-3 col-12 log-in">
+                    <a class="p-1" href="log-in.html"> <i class="fas fa-sign-in-alt"></i> Log In </a>
+                    <a class="p-1"> | </a>
+                    <a class="p-1" href="sign-up.html">Sign Up </a>
+                    <a class="p-2 ml-3 cart-sm" href="cart.html"> <i class="fas fa-shopping-cart"></i> Cart </a>
+                </div>
             </div>
-            <div class="col-lg-3 col-12 log-in">
-              <a class="p-1" href="log-in.html">
-                <i class="fas fa-sign-in-alt"></i> Log In
-              </a>
-              <a class="p-1"> | </a>
-              <a class="p-1" href="sign-up.html">Sign Up </a>
-              <a class="p-2 ml-3 cart-sm" href="cart.html">
-                <i class="fas fa-shopping-cart"></i> Cart
-              </a>
-            </div>
-          </div>
         </div>
-        <div id="bottomHeader">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="">
-                        <img src="assets/Home_Page/imgs/logo.png" width="100px" alt="">
-                    </a>
-                    <button data-toggle="collapse" data-target="#navbarToggler" type="button" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarToggler">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.php">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Aisles</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="page2_Fruits_Veggies.html">Fruits and Vegetables</a>
-                                    <a class="dropdown-item" href="page2_1_Dairy.html">Dairy products</a>
-                                    <a class="dropdown-item" href="page2_1_Meat.html">Meat & Poultry</a>
-                                    <a class="dropdown-item" href="page2_BreadAndBakery.html">Bread & Bakery products</a>
-                                    <a class="dropdown-item" href="page2_FishAndSeafood.html">Fish & Seafood</a>
-                                    <a class="dropdown-item" href="page2_Frozen.html">Frozen Food</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./backstore/product-management.php">Backstore</a>
-                            </li>
-                        </ul>
+    </div>
+    <div id="bottomHeader">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                    <img src="assets/Home_Page/imgs/logo.png" width="100px" alt="">
+                </a>
+                <button data-toggle="collapse" data-target="#navbarToggler" type="button" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">Aisles</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="aisle.php?category=veg">Fruits and Vegetables</a>
+                                <a class="dropdown-item" href="aisle.php?category=dairy">Dairy products</a>
+                                <a class="dropdown-item" href="aisle.php?category=meat">Meat & Poultry</a>
+                                <a class="dropdown-item" href="aisle.php?category=bakery">Bread & Bakery products</a>
+                                <a class="dropdown-item" href="aisle.php?category=seafood">Fish & Seafood</a>
+                                <a class="dropdown-item" href="aisle.php?category=frozen">Frozen Food</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="backstore.html">Backstore</a>
+                        </li>
+                    </ul>
 
-              <a class="p-2 ml-3 cart-lg" href="cart.html">
-                <i class="fas fa-shopping-cart"></i> Cart
-              </a>
-            </div>
-          </nav>
+                    <a class="p-2 ml-3 cart-lg" href="cart.html"> <i class="fas fa-shopping-cart"></i> Cart </a>
+                </div>
+            </nav>
         </div>
-      </div>
-    </header>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="bootstrap-v4/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="bootstrap-v4/js/popper.min.js"></script>
-    <script src="bootstrap-v4/js/bootstrap.min.js"></script>
-  </body>
+    </div>
+</header>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="bootstrap-v4/js/jquery-3.3.1.slim.min.js"></script>
+<script src="bootstrap-v4/js/popper.min.js"></script>
+<script src="bootstrap-v4/js/bootstrap.min.js"></script>
+
+</body>
+
+
 </html>

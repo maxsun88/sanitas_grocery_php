@@ -4,7 +4,7 @@
 <?php
 
 function getProducts(){
-    $xml=simplexml_load_file("../xml_database/products.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file(dirname(__FILE__) . "/products.xml") or die("Error: Cannot create object");
     return json_decode(json_encode((array)$xml), TRUE)["product"];
 }
 
@@ -38,5 +38,5 @@ function writeProducts($productList){
         $product->appendChild( $dom->createElement('img', $item["img"]) );
         $product->appendChild( $dom->createElement('stock', $item["stock"]) );
     }
-    $dom->save('../xml_database/products.xml') or die('XML Create Error');
+    $dom->save(dirname(__FILE__) . "/products.xml") or die('XML Create Error');
 }

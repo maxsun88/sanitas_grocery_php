@@ -29,14 +29,14 @@
     <table>
     <tr>
         <td>
-            <a href="./page2_Fruits_Veggies.html">
+            <a href="aisle.php?category=veg">
                 <img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/bananas.jpg">
                 <div class="mid">
                     Fruits and Vegetables
                 </div>
             </a>
         </td>
-        <td><a href="./page2_1_Dairy.html"><img class="zoom" class="image"  width="267px" height="400px" src="./assets/Home_Page/imgs/dairy.jpg">
+        <td><a href="aisle.php?category=dairy"><img class="zoom" class="image"  width="267px" height="400px" src="./assets/Home_Page/imgs/dairy.jpg">
         <div class="mid">
             <div>
             Dairy products
@@ -44,7 +44,7 @@
             </a>
         </div>
         </td>
-        <td><a href="./page2_1_Meat.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/meatcrop.jpg">
+        <td><a href="aisle.php?category=meat"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/meatcrop.jpg">
         <div class="mid">
             <div>
             Meat & Poultry
@@ -54,7 +54,7 @@
         </td>
     </tr>
     <tr>
-        <td><a href="./page2_BreadAndBakery.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/bread.jpg">
+        <td><a href="aisle.php?category=bakery"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/bread.jpg">
         <div class="mid">
             <div>
             Bread & Bakery products
@@ -62,7 +62,7 @@
             </a>
         </div>
         </td>
-        <td><a href="./page2_FishAndSeafood.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/fish.jpg">
+        <td><a href="aisle.php?category=seafood"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/fish.jpg">
         <div class="mid">
             <div>
             Fish & Seafood
@@ -70,7 +70,7 @@
             </a>
         </div>
         </td>
-        <td><a href="./page2_Frozen.html"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/frozen.jpg">
+        <td><a href="aisle.php?category=frozen"><img class="zoom" class="image" width="267px" height="400px" src="./assets/Home_Page/imgs/frozen.jpg">
         <div class="mid">
             <div>
             Frozen Food
