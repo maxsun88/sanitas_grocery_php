@@ -19,6 +19,15 @@ function getProductsByCategory($category){
     return $productsSameCat;
 }
 
+function getProductById($id){
+    $productList = getProducts();
+    foreach($productList as $item) {
+        if($item["@attributes"]["id"] == $id){
+            return $item;
+        }
+    }
+}
+
 function writeProducts($productList){
     $dom = new DOMDocument('1.0','UTF-8');
     $dom->formatOutput = true;

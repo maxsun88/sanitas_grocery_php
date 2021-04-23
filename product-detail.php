@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+    require_once 'xml_database/simplexml.php';
+    $id = $_GET['id'];
+    $item = getProductById($id);
+    $types = explode(";", $item["types"]);
+?>
+
 <html lang = "en">
 	<head>
 		<title> Sanitas Groceries - Product description </title>
@@ -67,33 +73,32 @@
 		<div class="row">
 			<div class="col">
 				<br />
-				<br /><h2 class="p-name"> Carrots </h2>
+				<br /><h2 class="p-name"> <?php echo $item["name"]; ?> </h2>
 				<h4> 420g </h4>
 				<br />
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">
-				<img src="assets/Page2/imgs/carrots.jpg" class="img-fluid rounded mb-3 img" alt="Carrots" width="300px"/>
+				<img src="<?php echo $item["img"]; ?>" class="img-fluid rounded mb-3 img" alt="Carrots" width="300px"/>
 			</div>
 			<div class="col-sm-9">
-				<h3 class="price"> $6.69 ea. </h3>
-				<h5> $1.59 /100g </h5> <br />
+				<h3 class="price"> $<?php echo $item["price"] . " / " . $item["unit"]; ?> </h3>
 				<h4> Product description </h4> <br />
-				<p> Local organic carrots. </p>
+				<p> <?php echo $item["description"]; ?> </p>
 				<hr />
 				<a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					More description
 				</a>
 				<div class="collapse" id="collapseExample">
-					<br/>Product number: F10000011
+					<br/><?php echo $item["description"]; ?>
 				</div>
 			</br> </br>
 			
 			<form action="">
 				<div class="form-group row">
 					<div class="col-sm-2">
-						<label for="quantity">Quantity:</label>
+						<label>Quantity:</label>
 					</div>
 					<div class="col-sm-3">
 						<input type="number" min="1" class="form-control p-quantity" id="qty" value="1" name="quantity">
@@ -101,13 +106,13 @@
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-2">
-						<label for="type">Type:</label>
+						<label>Type:</label>
 					</div>
 					<div class="col-sm-3">
 						<select class="form-control" id="sel1">
-							<option value="data4">Orange carrots</option>
-							<option value="data5">Deep purple carrots</option>
-							<option value="data6">White carrots</option>
+                            <?php foreach ($types as $str) :?>
+                                <option value="data4"><?php echo $str ?></option>
+                            <?php endforeach; ?>
 						</select>
 					</div>
 				</div>

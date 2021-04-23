@@ -24,7 +24,6 @@
         });
     </script>
     <script src="addToCartP2.js" async="true"></script>
-    
     <style>
         .banner-image {
             <?php if($category=='seafood') :?>background-image: url("assets/Page2/imgs/banner_fish.jpg"); <?php endif; ?>
@@ -92,7 +91,8 @@
             <?php foreach ($productList as $item) :?>
                 <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="element-wrapper">
-                        <div class="box-up">
+                        <div class="box-up" style="cursor: pointer;"
+                             onclick="window.location='product-detail.php?id=<?php echo $item["@attributes"]["id"]; ?>';">
                             <img class="img" src="<?php echo $item["img"]; ?>" alt="" height="110px">
                             <div class="img-info">
                                 <div class="info-inner">
