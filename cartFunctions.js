@@ -73,7 +73,7 @@ function addItemsToCart(){
 										<div class="d-flex justify-content-between align-items-center"></div>
 											<div>
 												<a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3 mb-4 cart-remove-btn"> Remove item </a>
-												<p class="mb-0"><span><strong class="price" id="summary${i}">$${(productList[i][1]*productList[i][3]).toFixed(2)}</strong></span></p class="mb-0">
+												<p class="mb-0"><span><strong class="price summary" id="summary${i}">$${(productList[i][1]*productList[i][3]).toFixed(2)}</strong></span></p class="mb-0">
 											</div>
 										</div>
 									</div>
@@ -115,7 +115,7 @@ function productPrice(){
 	var totalPerProductList = new Array(pricePerUnitList.length);
 	var i = 0;
 	for (i; i < totalPerProductList.length; i++){
-		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * ((isNaN(document.getElementsByClassName('quantity')[i].value) || document.getElementsByClassName('quantity')[i].value == undefined)? 1: document.getElementsByClassName('quantity')[i].value);
+		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * ((document.getElementsByClassName('quantity')[i] == undefined)? 1: document.getElementsByClassName('quantity')[i].value);
 		document.getElementsByClassName("summary")[i].innerText = "$" + totalPerProductList[i].toFixed(2);
 	}
 	cartPrice();
