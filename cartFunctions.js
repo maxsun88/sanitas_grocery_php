@@ -20,18 +20,16 @@ function removeItem(event){
 	var buttonClicked = event.target;
 	var buttonProduct = buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement;
 	var name = buttonProduct.getElementsByClassName("p-name")[0].innerText;
-	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 	var productList = getProductCookies();
 	console.log(productList);
-	var newList = "product=";
+	var newList = "";
+	console.log(productList);
 	for (var i = 0; i < productList.length; i++){
 		if (productList[i][0] != name){
-			newList += productList[i][0];
-			newList += "," + productList[i][1];
-			newList += "," + productList[i][2];
-			newList += "," + productList[i][3] + "]";
+			newList += productList[i][0] + "," + productList[i][1] + "," + productList[i][2] + "," + productList[i][3] + "]";
 		}
 	}
+	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 	console.log(newList);
 	window.sessionStorage.setItem("product", newList);
 	productPrice();
