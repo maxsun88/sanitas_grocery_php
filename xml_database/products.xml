@@ -136,7 +136,7 @@
     <stock>100</stock>
   </product>
   <product category="seafood" id="S12">
-    <name>Fresh Canadian Atlantic Salmon Fillet, Value Pack</name>
+    <name>Fresh Canadian Atlantic Salmon Fillet Value Pack</name>
     <price>10.0</price>
     <unit>each</unit>
     <description>example</description>

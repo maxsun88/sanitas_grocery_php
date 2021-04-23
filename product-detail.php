@@ -111,14 +111,14 @@
 					<div class="col-sm-3">
 						<select class="form-control" id="sel1">
                             <?php foreach ($types as $str) :?>
-                                <option value="data4"><?php echo $str ?></option>
+                                <option><?php echo $str ?></option>
                             <?php endforeach; ?>
 						</select>
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-3">
-						<a class="btn btn-primary form-control mt-3" href="#" role="button">Add to cart</a>
+						<a class="btn btn-primary form-control mt-3 add-to-cart" href="#" role="button">Add to cart</a>
 					</div>
 				</div>
 			</form>
