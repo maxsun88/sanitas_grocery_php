@@ -67,11 +67,6 @@ function addItemsToCart(){
 											<div>
 												<div class="def-number-input number-input safari_only mb-0 w-100">
 													<input class="form-control" class="quantity" min="1" id="quantity${i}" name="quantity" value="${productList[i][3]}" type="number" onclick="productPrice()">
-													<select class="form-control my-2" id="sel1">
-														<option value="data4">Brazil</option>
-														<option value="data5">Mexico</option>
-														<option value="data6">Malaysia</option>
-													</select>
 												</div>
 											</div>
 										</div>
@@ -120,7 +115,7 @@ function productPrice(){
 	var totalPerProductList = new Array(pricePerUnitList.length);
 	var i = 0;
 	for (i; i < totalPerProductList.length; i++){
-		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * document.getElementsByClassName('quantity')[i].value;
+		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * ((isNaN(document.getElementsByClassName('quantity')[i].value) || document.getElementsByClassName('quantity')[i].value == undefined)? 1: document.getElementsByClassName('quantity')[i].value);
 		document.getElementsByClassName("summary")[i].innerText = "$" + totalPerProductList[i].toFixed(2);
 	}
 	cartPrice();
