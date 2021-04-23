@@ -24,7 +24,7 @@ function removeItem(event){
 	var newList = "";
 	console.log(productList);
 	for (var i = 0; i < productList.length; i++){
-		if (productList[i][0] != name && productList[i][0] != undefined){
+		if (productList[i][0] != name && productList[i][0] != undefined && productList[i][1] != undefined && productList[i][2] != undefined && productList[i][3] != undefined){
 			newList += productList[i][0] + "," + productList[i][1] + "," + productList[i][2] + "," + productList[i][3] + "]";
 		}
 	}
