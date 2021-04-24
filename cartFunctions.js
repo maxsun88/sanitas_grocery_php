@@ -22,7 +22,6 @@ function removeItem(event){
 	var name = buttonProduct.getElementsByClassName("p-name")[0].innerText;
 	var productList = getProductCookies();
 	var newList = "";
-	console.log(productList);
 	for (var i = 0; i < productList.length; i++){
 		if (productList[i][0] != name && productList[i][0] != undefined && productList[i][1] != undefined && productList[i][2] != undefined && productList[i][3] != undefined){
 			newList += productList[i][0] + "," + productList[i][1] + "," + productList[i][2] + "," + productList[i][3] + "]";
@@ -30,7 +29,11 @@ function removeItem(event){
 	}
 	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 	window.sessionStorage.setItem("product", newList);
-	productPrice();
+	var cartItems = document.getElementsByClassName('cart-items')[0];
+	while (cartItems.hasChildNodes()){
+		cartItems.removeChild(cartItems.firstChild);
+	}
+	addItemsToCart();
 }
 
 function addItemsToCart(){
@@ -40,7 +43,7 @@ function addItemsToCart(){
 	}
 	
 	var cartItems = document.getElementsByClassName('cart-items')[0];
-	cartItems.innerText = "Cart (" + productList.length + " items)";
+	cartItems.innerText = "Cart (" + (productList.length - 1) + " items)";
 	for (var i = 0; i < productList.length; i++){
 		if (productList[i] == ""){
 			break;

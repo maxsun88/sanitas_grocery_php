@@ -35,9 +35,7 @@ function setProductCookie(title, price, image, amount) {
     }
     if (window.sessionStorage.getItem("product")){
         window.sessionStorage.setItem("product", window.sessionStorage.getItem("product") + title + "," + price + "," + image + "," + amount + "]");
-        console.log(window.sessionStorage.getItem("product"));
         return ;
     }
     window.sessionStorage.setItem("product", title + "," + price + "," + image + "," + amount + "]");
-    console.log(window.sessionStorage.getItem("product"));
 }
