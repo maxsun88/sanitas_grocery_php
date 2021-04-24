@@ -29,7 +29,11 @@ function removeItem(event){
 	}
 	buttonClicked.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
 	window.sessionStorage.setItem("product", newList);
-	productPrice();
+	var cartItems = document.getElementsByClassName('cart-items')[0];
+	while (cartItems.hasChildNodes()){
+		cartItems.removeChild(cartItems.firstChild);
+	}
+	addItemsToCart();
 }
 
 function addItemsToCart(){
@@ -39,7 +43,7 @@ function addItemsToCart(){
 	}
 	
 	var cartItems = document.getElementsByClassName('cart-items')[0];
-	cartItems.innerText = "Cart (" + productList.length + " items)";
+	cartItems.innerText = "Cart (" + (productList.length - 1) + " items)";
 	for (var i = 0; i < productList.length; i++){
 		if (productList[i] == ""){
 			break;
