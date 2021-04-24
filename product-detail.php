@@ -23,7 +23,7 @@
 				$('#our-footer').load('footer.html');
 			});
 		</script>
-		<script src="addToCartP3.js" async="true"></script>
+		<script src="addToCartP3.js" async></script>
 
 		<!-- Save values on refresh -->
 		<script> 

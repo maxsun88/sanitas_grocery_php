@@ -23,7 +23,7 @@
             $('#our-footer').load('footer.html');
         });
     </script>
-    <script src="addToCartP2.js" async="true"></script>
+    <script src="addToCartP2.js" async></script>
     <style>
         .banner-image {
             <?php if($category=='seafood') :?>background-image: url("assets/Page2/imgs/banner_fish.jpg"); <?php endif; ?>
