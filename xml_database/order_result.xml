@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+  <order id="D01" category="dairy">
+    <name>Milk - 1L</name>
+    <category>Dairy</category>
+    <price>1.90</price>
+    <quantity>512</quantity>
+  </order>
+  <order id="M01" category="meat">
+    <name>Lean Ground Beef</name>
+    <category>Meat</category>
+    <price>13.21</price>
+    <quantity>512</quantity>
+  </order>
+  <order id="B01" category="bakery">
+    <name>French Baguette</name>
+    <category>Bakery</category>
+    <price>3.19</price>
+    <quantity>512</quantity>
+  </order>
+  <order id="S01" category="seafood">
+    <name>Lobster Cooked</name>
+    <category>Seafood</category>
+    <price>31.29</price>
+    <quantity>512</quantity>
+  </order>
+  <order id="F01" category="frozen">
+    <name>Frozen Pizza</name>
+    <category>Frozen</category>
+    <price>5.6</price>
+    <quantity>512</quantity>
+  </order>
+</orders>

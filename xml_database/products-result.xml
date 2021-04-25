@@ -45,15 +45,6 @@
     <img>null</img>
     <stock>512</stock>
   </product>
-  <product category="seafood" id="S4">
-    <name>Frozen Seasoned Seafood Skewer</name>
-    <price>12.2</price>
-    <unit>each</unit>
-    <description>example</description>
-    <types>normal;extra</types>
-    <img>assets/Page2/imgs/seafood_skewer.jpg</img>
-    <stock>100</stock>
-  </product>
   <product category="seafood" id="S5">
     <name>Canadian Atlantic Salmon Fillet</name>
     <price>4.99</price>
