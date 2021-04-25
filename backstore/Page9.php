@@ -96,7 +96,7 @@
                                       <td>
                                         <form>
                                           <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
-                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["name"];?>') ">
+                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["firstName"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>
                                         </form>
