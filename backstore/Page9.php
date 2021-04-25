@@ -69,7 +69,7 @@
                                     <input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-success" type="submit">Search</button>
                                 </form>
-                                <a style="font-size: 2rem" class="btn" href="edit_add_user.php?action=insert"><i class="far fa-plus-square"></i></a>
+                                <a style="font-size: 2rem" class="btn" href="add_user.php?action=insert"><i class="far fa-plus-square"></i></a>
                             </div>
                             <table class="table table-bordered table-hover table-sm">
                                 <thead class="thead-light">
@@ -81,6 +81,7 @@
                                     <th scope="col">Street Address</th>
                                     <th scope="col">City</th>
                                     <th scope="col">Postal Code</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -94,12 +95,10 @@
                                       <td><?php echo $item["city"]; ?></td>
                                       <td><?php echo $item["postalCode"]; ?></td>
                                       <td>
-                                        <form>
-                                          <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
+                                          <a href="edit_add_user.php?id=<?php echo $item["@attributes"]["id"]; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
                                           <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["firstName"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>
-                                        </form>
                                       </td>
                                   </tr>
                                 <?php endforeach; ?>

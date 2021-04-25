@@ -8,6 +8,12 @@ function getUsers(){
     return json_decode(json_encode((array)$xml), TRUE)["user"];
 }
 
+function getUsersXML()
+{
+    $xml=simplexml_load_file("../xml_database/Page9.xml") or die("Error: Cannot create object");
+    return $xml;
+}
+
 function getUsersByCategory($category){
     $userList = getUsers();
     $usersSameCat = array(); //products of the same category

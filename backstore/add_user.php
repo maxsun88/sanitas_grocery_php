@@ -1,9 +1,9 @@
 <?php
-require_once '../xml_database/simplexml_orders.php';
+require_once '../xml_database/simplexml_P9.php';
 $id = isset($_GET["id"]) ? $_GET["id"]:null;
-$xml = simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
-$orderList = json_decode(json_encode((array)$xml), TRUE)["order"];
-$list = getOrderByID($id);
+$xml = simplexml_load_file("../xml_database/Page9.xml") or die("Error: Cannot create object");
+$userList = json_decode(json_encode((array)$xml), TRUE)["user"];
+$list = getUserByID($id);
 
 ?>
 <!DOCTYPE html>
@@ -14,16 +14,15 @@ $list = getOrderByID($id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Back-Store Order Edit</title>
+    <title>Back-Store User Edit</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../assets/Backstore/backstore.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script></head>
 </head>
 
 <body>
@@ -36,7 +35,7 @@ $list = getOrderByID($id);
         </div>
 
         <ul class="list-unstyled components">
-            <p>Back-Store Order Edit</p>
+            <p>Back-Store Add User</p>
             <li>
                 <a href="product-management.php">Products</a>
             </li>
@@ -56,7 +55,7 @@ $list = getOrderByID($id);
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            Order Edit
+                        Add User
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between my-3">
@@ -65,44 +64,55 @@ $list = getOrderByID($id);
                                   <div class="form-group">
                                     <div class="container">
                                         <div class="row">
-                                        <div class="col-sm">
-                                            <label for="id">Sequence Number</label>
-                                            <input name="text" id="id" class="form-control" placeholder="Sequence Number" value="<?php echo $id;?>"></input>
+                                          <div class="col-sm">
+                                            <label for="title">Title</label>
+                                            <select class="form-control" name="title" value="<?php echo $list["title"];?>">
+          							                       <option> Mr. </option>
+          							                       <option> Mrs. </option>
+          							                       <option> Miss </option>
+          							                       <option> Ms. </option>
+          						                      </select>
                                           </div>
                                           <div class="col-sm">
-                                            <label for="name">Name</label>
-                                            <input name="text" id="name" class="form-control" placeholder="Name" value="<?php echo $list["name"];?>"></input>
+                                            <label for="firstName">First Name</label>
+                                            <input type = "text" class="form-control" name = "firstName"  size="50" required  placeholder="Jerry"></input>
                                           </div>
                                           <div class="col-sm">
-                                            <label for="category">Category</label>
-          							            <input type="text" class="form-control" name="category" placeholder="Category" value="<?php echo $list["category"];?>"></input>
+                                            <label for="lastName">Last Name</label>
+                                            <input type = "text" class="form-control" name = "lastName" size="50" required placeholder="Labowski"></input>
                                           </div>
+                                          <div class="col-sm">
+                                          <label for="id">Account Number</label>
+                                            <input name="text" id="id" class="form-control" placeholder="Account Number"></input>
                                         </div>
                                       </div>
                                   </div>
-
+                                  <br>
                                 <div class="form-group">
                                   <div class="container">
                                       <div class="row">
                                         <div class="col-sm">
-                                          <label for="price">Price</label>
-                                          <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $list["price"];?>"></input>
+                                          <label for="streetAddress">Street Address</label>
+                                          <input type = "text" class="form-control" name = "streetAddress" size="50" required placeholder="555 William Wonka ave.">
                                         </div>
                                         <div class="col-sm">
-                                          <label for="quantity">Quantity</label>
-                                          <input type="text" class="form-control" id="quantity" placeholder="Quantity" value="<?php echo $list["quantity"];?>"></input>
+                                          <label for="city">City</label>
+                                          <input class="form-control" type = "text" name = "city" size="20" required placeholder="Montréal">
+                                      </div>
+                                      <div class="col-sm">
+                                          <label for="postalCode">Postal Code</label>
+                                          <input type="text" class="form-control" name="postalCode" size="20" required placeholder="A1B 2C3">
                                       </div>
                                     </div>
                                 </div>
                               </div>
-
                               <br>
 
                               <div class="form-group">
                                 <div class="container">
                                     <div class="row">
                                       <div class="col-sm">
-                                          <button type="submit" class="btn btn-dark">Make Changes</button>
+                                          <button type="submit" class="btn btn-dark">Add User</button>
                                       </div>
                                     </div>
                                   </div>
