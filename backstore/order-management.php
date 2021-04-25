@@ -61,8 +61,9 @@ $orderList = getOrdersXML();
 										<button class="btn btn-outline-success" type="submit">Search</button>
 										
 									</form>
-									
+								
 								</div>
+								<a style="font-size: 2rem" class="btn" href="edit_add_order.php?action=insert"><i class="far fa-plus-square"></i></a>
 								
 								<div class="table-responsive-lg">
 								<table class="table table-bordered table-hover">

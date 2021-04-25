@@ -67,11 +67,11 @@ $list = getOrderByID($id);
                                         <div class="row">
                                         <div class="col-sm">
                                             <label for="id">Sequence Number</label>
-                                            <input name="text" id="id" class="form-control" placeholder="Sequence Number" value="<?php echo $id;?>"></input>
+                                            <input name="text" id="id" name="id" class="form-control" placeholder="Sequence Number" value="<?php echo $id;?>"></input>
                                           </div>
                                           <div class="col-sm">
                                             <label for="name">Name</label>
-                                            <input name="text" id="name" class="form-control" placeholder="Name" value="<?php echo $list["name"];?>"></input>
+                                            <input name="text" id="name" name="name" class="form-control" placeholder="Name" value="<?php echo $list["name"];?>"></input>
                                           </div>
                                           <div class="col-sm">
                                             <label for="category">Category</label>
@@ -86,11 +86,11 @@ $list = getOrderByID($id);
                                       <div class="row">
                                         <div class="col-sm">
                                           <label for="price">Price</label>
-                                          <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $list["price"];?>"></input>
+                                          <input type="text" class="form-control" id="price"name="price" placeholder="Price" value="<?php echo $list["price"];?>"></input>
                                         </div>
                                         <div class="col-sm">
                                           <label for="quantity">Quantity</label>
-                                          <input type="text" class="form-control" id="quantity" placeholder="Quantity" value="<?php echo $list["quantity"];?>"></input>
+                                          <input type="text" class="form-control" id="quantity"name="quantity" placeholder="Quantity" value="<?php echo $list["quantity"];?>"></input>
                                       </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@ $list = getOrderByID($id);
                                 <div class="container">
                                     <div class="row">
                                       <div class="col-sm">
-                                          <button type="submit" class="btn btn-dark">Make Changes</button>
+                                          <button type="submit" method="post" class="btn btn-dark" onclick="overWriteXML($id, <?php if(isset($_POST)) echo $_POST['id']; ?>,<?php if(isset($_POST)) echo $_POST['name']; ?> , <?php if(isset($_POST)) echo $_POST['category']; ?>, <?php if(isset($_POST)) echo $_POST['price']; ?>, <?php if(isset($_POST)) echo $_POST['quantity']; ?>)">Make Changes</button>
                                       </div>
                                     </div>
                                   </div>

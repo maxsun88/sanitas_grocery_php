@@ -34,6 +34,24 @@ function getOrderById($id){
     }
 }
 
+function overWriteXML($id, $newid, $name, $category, $price, $quantity)
+{
+    $orderList = getOrders();
+    foreach ($orderList as $item)
+    {
+        if ($item["@attributes"]["id"]==$id)
+        {
+            $item["id"] = $newid;
+            $item["name"] = $name;
+            $item["category"] = $category;
+            $item["price"] = $price;
+            $item["quantity"] = $quantity;
+        }
+    }
+    writeOrders($orderList);
+    
+}
+
 function writeOrders($orderList){
     $dom = new DOMDocument('1.0','UTF-8');
     $dom->formatOutput = true;

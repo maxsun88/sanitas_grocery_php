@@ -58,7 +58,5 @@ if($action=="insert"){
     writeOrders($orderList);
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
-//header("location: order-management.php");
+
+header("location: order-management.php");
