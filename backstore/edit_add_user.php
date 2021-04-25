@@ -1,3 +1,11 @@
+<?php
+require_once '../xml_database/simplexml_P9.php';
+$id = isset($_GET["id"]) ? $_GET["id"]:null;
+$xml = simplexml_load_file("../xml_database/Page9.xml") or die("Error: Cannot create object");
+$userList = json_decode(json_encode((array)$xml), TRUE)["user"];
+$list = getUserByID($id);
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +43,7 @@
                 <a href="Page9.php">Users</a>
             </li>
             <li>
-                <a href="">Orders</a>
+                <a href="order-management.php">Orders</a>
             </li>
         </ul>
     </nav>
@@ -58,7 +66,7 @@
                                         <div class="row">
                                           <div class="col-sm">
                                             <label for="title">Title</label>
-                                            <select class="form-control" name="title">
+                                            <select class="form-control" name="title" value="<?php echo $list["title"];?>">
           							                       <option> Mr. </option>
           							                       <option> Mrs. </option>
           							                       <option> Miss </option>
@@ -67,30 +75,33 @@
                                           </div>
                                           <div class="col-sm">
                                             <label for="firstName">First Name</label>
-                                            <input type = "text" class="form-control" name = "firstName"  size="50" required placeholder="Jerry"></input>
+                                            <input type = "text" class="form-control" name = "firstName"  size="50" required  placeholder="Jerry" value="<?php echo $list["firstName"];?>"></input>
                                           </div>
                                           <div class="col-sm">
                                             <label for="lastName">Last Name</label>
-                                            <input type = "text" class="form-control" name = "lastName" size="50" required placeholder="Labowski"></input>
+                                            <input type = "text" class="form-control" name = "lastName" size="50" required placeholder="Labowski" value="<?php echo $list["lastName"];?>"></input>
                                           </div>
+                                          <div class="col-sm">
+                                          <label for="id">Account Number</label>
+                                            <input name="text" id="id" class="form-control" placeholder="Account Number" value="<?php echo $id;?>"></input>
                                         </div>
                                       </div>
                                   </div>
-
+                                  <br>
                                 <div class="form-group">
                                   <div class="container">
                                       <div class="row">
                                         <div class="col-sm">
                                           <label for="streetAddress">Street Address</label>
-                                          <input type = "text" class="form-control" name = "streetAddress" size="50" required placeholder="555 William Wonka ave.">
+                                          <input type = "text" class="form-control" name = "streetAddress" size="50" required placeholder="555 William Wonka ave." value="<?php echo $list["streetAddress"];?>">
                                         </div>
                                         <div class="col-sm">
                                           <label for="city">City</label>
-                                          <input class="form-control" type = "text" name = "city" size="20" required placeholder="Montréal">
+                                          <input class="form-control" type = "text" name = "city" size="20" required placeholder="Montréal" value="<?php echo $list["city"];?>">
                                       </div>
                                       <div class="col-sm">
                                           <label for="postalCode">Postal Code</label>
-                                          <input type="text" class="form-control" name="postalCode" size="20" required placeholder="A1B 2C3">
+                                          <input type="text" class="form-control" name="postalCode" size="20" required placeholder="A1B 2C3" value="<?php echo $list["postalCode"];?>">
                                       </div>
                                     </div>
                                 </div>
