@@ -4,8 +4,28 @@
 <?php
 
 function getUsers(){
-    $xml=simplexml_load_file("Page9.xml") or die("Error: Cannot create object");
-    return $xml;
+    $xml=simplexml_load_file(dirname(__FILE__) . "/Page9.xml") or die("Error: Cannot create object");
+    return json_decode(json_encode((array)$xml), TRUE)["user"];
+}
+
+function getUsersByCategory($category){
+    $userList = getUsers();
+    $usersSameCat = array(); //products of the same category
+    foreach($userList as $item) {
+        if($item["@attributes"]["category"] == $category){
+            $usersSameCat[] = $item;
+        }
+    }
+    return $usersSameCat;
+}
+
+function getUserById($id){
+    $userList = getUsers();
+    foreach($userList as $item) {
+        if($item["@attributes"]["id"] == $id){
+            return $item;
+        }
+    }
 }
 
 function writeUsers($userList){
@@ -25,5 +45,5 @@ function writeUsers($userList){
         $user->appendChild( $dom->createElement('streetAddress', $item["streetAddress"]) );
         $user->appendChild( $dom->createElement('postalCode', $item["postalCode"]) );
     }
-    $dom->save('Page9.xml') or die('XML Create Error');
+    $dom->save(dirname(__FILE__) . "/Page9.xml") or die('XML Create Error');
 }
