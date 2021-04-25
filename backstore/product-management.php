@@ -38,7 +38,7 @@
                   <a href="#">Products</a>
               </li>
               <li>
-                  <a href="../Page9.php">Users</a>
+                  <a href="Page9.php">Users</a>
               </li>
               <li>
                   <a href="order-management.php">Orders</a>

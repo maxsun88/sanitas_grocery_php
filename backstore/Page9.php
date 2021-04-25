@@ -1,24 +1,26 @@
-<!DOCTYPE html>
 <?php
-  require_once 'simplexml_P9.php';
-  $userList = getUsers();
+    require_once '../xml_database/simplexml_P9.php';
+    $tab = isset($_GET['tab']) ? $_GET['tab'] : 'customer';
+    $userList = getUsersByCategory($tab);
 ?>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>List of users</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="assets/Backstore/backstore.css">
+    <link rel="stylesheet" href="../assets/Backstore/backstore.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -27,19 +29,19 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <a href="index.php"><h3>Sanitas Groceries</h3></a>
+            <a href="../index.php"><h3>Sanitas Groceries</h3></a>
         </div>
 
         <ul class="list-unstyled components">
             <p>List of users</p>
             <li>
-                <a href="./backstore/product-management.php">Products</a>
+                <a href="product-management.php">Products</a>
             </li>
             <li>
                 <a href="#">Users</a>
             </li>
             <li>
-                <a href="./backstore/order-management.php">Orders</a>
+                <a href="order-management.php">Orders</a>
             </li>
         </ul>
     </nav>
@@ -49,23 +51,25 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card management-table">
                         <div class="card-header">
                             Users Management
                         </div>
                         <div class="card-body">
 
                             <div class="d-flex justify-content-between my-3">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Users</a>
-                                    </li>
-                                </ul>
+                            <nav>
+                              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                  <a class="nav-item nav-link <?php if($tab=='customer') :?>active<?php endif; ?>"  href="Page9.php?tab=customer" role="tab" aria-selected="true">Customers</a>
+                                  <a class="nav-item nav-link <?php if($tab=='admin') :?>active<?php endif; ?>" href="Page9.php?tab=admin" role="tab" aria-selected="false">Admins</a>
+                              </div>
+                          </nav>
 
                                 <form class="d-flex">
                                     <input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-success" type="submit">Search</button>
                                 </form>
+                                <a style="font-size: 2rem" class="btn" href="edit_add_user.php?action=insert"><i class="far fa-plus-square"></i></a>
                             </div>
                             <table class="table table-bordered table-hover table-sm">
                                 <thead class="thead-light">
@@ -80,19 +84,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($userList->user as $item) :?>
+                                <?php foreach ($userList as $item) :?>
                                   <tr>
-                                      <th scope="row"><?php echo $item['id']; ?></th>
-                                      <td><?php echo $item->title; ?></td>
-                                      <td><?php echo $item->firstName; ?></td>
-                                      <td><?php echo $item->lastName; ?></td>
-                                      <td><?php echo $item->streetAddress; ?></td>
-                                      <td><?php echo $item->city; ?></td>
-                                      <td><?php echo $item->postalCode; ?></td>
+                                      <th scope="row"><?php echo $item["@attributes"]["id"]; ?></th>
+                                      <td><?php echo $item["title"]; ?></td>
+                                      <td><?php echo $item["firstName"]; ?></td>
+                                      <td><?php echo $item["lastName"]; ?></td>
+                                      <td><?php echo $item["streetAddress"]; ?></td>
+                                      <td><?php echo $item["city"]; ?></td>
+                                      <td><?php echo $item["postalCode"]; ?></td>
                                       <td>
                                         <form>
-                                          <a class="btn btn-success" href="job.php?id=<?php echo $item['id']; ?>"><i class="fas fa-edit"></i></a>
-                                          <a class="btn btn-danger" href="productHelper.inc.php?id=<?php echo $item['id']; ?>&action=delete"><i class="fas fa-trash-alt"></i></a>
+                                          <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
+                                          <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["name"];?>') ">
+                                            <i class="fas fa-trash-alt"></i>
+                                          </a>
                                         </form>
                                       </td>
                                   </tr>
