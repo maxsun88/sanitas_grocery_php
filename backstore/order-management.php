@@ -84,9 +84,11 @@ $orderList = getOrdersXML();
 										<td><?php echo $item->price.'$';?></td>
 										<td><?php echo $item->quantity;?></td>
 										<td>
-												<a href="./edit_add_order.php?id=<?php echo $item['id']; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-											<button type="button" class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item['id'];?>' , '<?php echo $item->name;?>') " ><i class="fas fa-trash-alt"></i></button>
-										</td>
+                                            <a href="./edit_add_order.php?id=<?php echo $item['id']; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+                                            <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item['id'];?>' , '<?php echo $item->name;?>') ">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
 									</tr>
 									<?php endforeach; ?>
 									</tbody>
