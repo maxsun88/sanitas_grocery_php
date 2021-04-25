@@ -54,14 +54,16 @@ $orderList = getOrdersXML();
 								Order date: 01/01/1999 <br />
 
 								<br /> <h5> Product list: </h5> 
-
 								<div class="d-flex justify-content-between my-3">
 
 									<form class="d-flex">
 										<input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
 										<button class="btn btn-outline-success" type="submit">Search</button>
+										
 									</form>
+									
 								</div>
+								
 								<div class="table-responsive-lg">
 								<table class="table table-bordered table-hover">
 									<thead class="thead-light">

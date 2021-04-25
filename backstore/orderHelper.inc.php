@@ -53,9 +53,9 @@ if($action=="insert"){
     $newOrder["quantity"] = $_POST["quantity"];
 
     //append new Order to the OrderList in memory
-    $OrderList[] = $newOrder;
+    $orderList[] = $newOrder;
 
-    writeOrders($OrderList);
+    writeOrders($orderList);
 }
 
 if (isset($_SERVER["HTTP_REFERER"])) {
