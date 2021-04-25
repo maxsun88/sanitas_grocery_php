@@ -45,15 +45,6 @@
     <img>null</img>
     <stock>512</stock>
   </product>
-  <product category="seafood" id="S3">
-    <name>Flake style crab</name>
-    <price>0.82</price>
-    <unit>each</unit>
-    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
-    <types>normal;extra</types>
-    <img>assets/Page2/imgs/crab_flavoured_seafood.jpg</img>
-    <stock>100</stock>
-  </product>
   <product category="seafood" id="S4">
     <name>Frozen Seasoned Seafood Skewer</name>
     <price>12.2</price>

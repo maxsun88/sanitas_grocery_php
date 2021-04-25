@@ -21,7 +21,7 @@ if($action=="delete"){
 if($action=="insert"){
     //Obtaining a new id for this Order inserted
     $OrdersSameCat = getOrdersByCategory($_POST["category"]);
-    if(count($ordersSameCat) > 0){
+    if(count($OrdersSameCat) > 0){
         $lastId = end($ordersSameCat)["@attributes"]["id"];
         $newId = $lastId[0] . strval(intval(substr($lastId, 1))+1);
     }else{//if this is the first Order of this category, create a brand new id
@@ -53,12 +53,12 @@ if($action=="insert"){
     $newOrder["quantity"] = $_POST["quantity"];
 
     //append new Order to the OrderList in memory
-    $OrderList[] = $newOrder;
+    $orderList[] = $newOrder;
 
-    writeOrders($OrderList);
+    writeOrders($orderList);
 }
 
 if (isset($_SERVER["HTTP_REFERER"])) {
     header("Location: " . $_SERVER["HTTP_REFERER"]);
 }
-header("location: order-management.php");
+//header("location: order-management.php");
