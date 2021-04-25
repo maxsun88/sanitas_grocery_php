@@ -1,6 +1,6 @@
 <?php
 require_once '../xml_database/simplexml_orders.php';
-$orderList = getOrders();
+$orderList = getOrdersXML();
 ?>
 
 <html lang = "en">
@@ -84,8 +84,8 @@ $orderList = getOrders();
 										<td><?php echo $item->price.'$';?></td>
 										<td><?php echo $item->quantity;?></td>
 										<td>
-												<a href="../edit_add_order.php?id=<?php echo $item['id']; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-											<button type="button" class="btn btn-danger" href="orderHelper.inc.php?id=<?php echo $item['id'];?>&action=delete" ><i class="fas fa-trash-alt"></i></button>
+												<a href="./edit_add_order.php?id=<?php echo $item['id']; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+											<button type="button" class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item['id'];?>' , '<?php echo $item->name;?>') " ><i class="fas fa-trash-alt"></i></button>
 										</td>
 									</tr>
 									<?php endforeach; ?>
@@ -101,18 +101,27 @@ $orderList = getOrders();
 		</div>
 
 	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#sidebar").mCustomScrollbar({
-				theme: "minimal"
-			});
 
-			$('#sidebarCollapse').on('click', function () {
-				$('#sidebar, #content').toggleClass('active');
-				$('.collapse.in').toggleClass('in');
-				$('a[aria-expanded=true]').attr('aria-expanded', 'false');
-			});
-		});
-	</script>
+      function confirmDelete(id, name) {
+          var r = window.confirm("Confirm deleting product: " + name);
+          if (r == true) {
+              window.location.href = "orderHelper.inc.php?id="+id+"&action=delete";
+          }
+      }
+
+      $(document).ready(function () {
+          $("#sidebar").mCustomScrollbar({
+              theme: "minimal"
+          });
+
+          $('#sidebarCollapse').on('click', function () {
+              $('#sidebar, #content').toggleClass('active');
+              $('.collapse.in').toggleClass('in');
+              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+          });
+      });
+
+  </script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 

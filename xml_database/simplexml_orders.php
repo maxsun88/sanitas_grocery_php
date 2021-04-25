@@ -5,7 +5,33 @@
 
 function getOrders(){
     $xml=simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
+    return json_decode(json_encode((array)$xml), TRUE)["order"];
+}
+
+function getOrdersXML()
+{
+    $xml=simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
     return $xml;
+}
+
+function getOrdersByCategory($category){
+    $orderList = getOrders();
+    $ordersSameCat = array(); //orders of the same category
+    foreach($orderList as $item) {
+        if($item["@attributes"]["category"] == $category){
+            $ordersSameCat[] = $item;
+        }
+    }
+    return $ordersSameCat;
+}
+
+function getOrderById($id){
+    $orderList = getOrders();
+    foreach($orderList as $item) {
+        if($item["@attributes"]["id"] == $id){
+            return $item;
+        }
+    }
 }
 
 function writeOrders($orderList){
