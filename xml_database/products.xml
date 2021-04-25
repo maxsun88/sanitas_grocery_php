@@ -45,15 +45,6 @@
     <img>null</img>
     <stock>512</stock>
   </product>
-  <product category="seafood" id="S2">
-    <name>Frozen Crab</name>
-    <price>6.99</price>
-    <unit>each</unit>
-    <description>default</description>
-    <types>normal;extra</types>
-    <img>assets/Page2/imgs/crab_frozen.jpg</img>
-    <stock>100</stock>
-  </product>
   <product category="seafood" id="S3">
     <name>Flake style crab</name>
     <price>0.82</price>
