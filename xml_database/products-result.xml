@@ -144,4 +144,13 @@
     <img>assets/Page2/imgs/frozen_shrimp.jpg</img>
     <stock>100</stock>
   </product>
+  <product category="veg" id="V2">
+    <name>Orange</name>
+    <price>5</price>
+    <unit>10</unit>
+    <description>Very good oranges</description>
+    <types>Mexico</types>
+    <img/>
+    <stock>100</stock>
+  </product>
 </products>
