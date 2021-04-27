@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <orders>
+  <order id="V01" category="vegetables">
+    <name>Banana</name>
+    <category>Vegetables</category>
+    <price>1.29</price>
+    <quantity>512</quantity>
+  </order>
   <order id="D01" category="dairy">
     <name>Milk - 1L</name>
     <category>Dairy</category>
@@ -29,5 +35,11 @@
     <category>Frozen</category>
     <price>5.6</price>
     <quantity>512</quantity>
+  </order>
+  <order id="F2" category="frozen">
+    <name/>
+    <category>frozen</category>
+    <price>1</price>
+    <quantity>1</quantity>
   </order>
 </orders>

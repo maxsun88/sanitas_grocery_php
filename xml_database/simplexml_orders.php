@@ -4,7 +4,7 @@
 <?php
 
 function getOrders(){
-    $xml=simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file("../xml_database/order_result.xml") or die("Error: Cannot create object");
     return json_decode(json_encode((array)$xml), TRUE)["order"];
 }
 
@@ -16,13 +16,13 @@ function getOrdersXML()
 
 function getOrdersByCategory($category){
     $orderList = getOrders();
-    $ordersSameCat = array(); //orders of the same category
+    $OrdersSameCat = array(); //orders of the same category
     foreach($orderList as $item) {
         if($item["@attributes"]["category"] == $category){
-            $ordersSameCat[] = $item;
+            $OrdersSameCat[] = $item;
         }
     }
-    return $ordersSameCat;
+    return $OrdersSameCat;
 }
 
 function getOrderById($id){
@@ -63,7 +63,7 @@ function writeOrders($orderList){
         $root->appendChild($order);
         $order->setAttribute('id', $item["@attributes"]["id"]);
         $order->setAttribute('category', $item["@attributes"]["category"]);
-        $order->appendChild( $dom->createElement('name', $item["name"]) );
+        $order->appendChild( $dom->createElement('name', $item["name"]));
         $order->appendChild( $dom->createElement('category', $item["category"]) );
         $order->appendChild( $dom->createElement('price', $item["price"]) );
         $order->appendChild( $dom->createElement('quantity', $item["quantity"]) );
