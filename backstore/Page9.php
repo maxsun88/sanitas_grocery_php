@@ -2,6 +2,12 @@
     require_once '../xml_database/simplexml_P9.php';
     $tab = isset($_GET['tab']) ? $_GET['tab'] : 'customer';
     $userList = getUsersByCategory($tab);
+    $title = isset($_GET["id"]) ? $list['title']: null;
+    $firstName = isset($_GET["id"]) ? $list['firstName']: null;
+    $lastName = isset($_GET["id"]) ? $list['lastName']: null;
+    $streetAddress = isset($_GET["id"]) ? $list['streetAddress']: null;
+    $city = isset($_GET["id"]) ? $list['city']: null;
+    $postalCode = isset($_GET["id"]) ? $list['postalCode']: null;
 ?>
 <html>
 
@@ -81,6 +87,7 @@
                                     <th scope="col">Street Address</th>
                                     <th scope="col">City</th>
                                     <th scope="col">Postal Code</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -94,12 +101,10 @@
                                       <td><?php echo $item["city"]; ?></td>
                                       <td><?php echo $item["postalCode"]; ?></td>
                                       <td>
-                                        <form>
-                                          <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
+                                          <a href="edit_add_user.php?id=<?php echo $item["@attributes"]["id"]; ?>"><button class="btn btn-success"><i class="fas fa-edit"></i></button></a>
                                           <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["firstName"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>
-                                        </form>
                                       </td>
                                   </tr>
                                 <?php endforeach; ?>
@@ -114,28 +119,32 @@
     </div>
 </div>
 
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--&lt;!&ndash; jQuery Custom Scroller CDN &ndash;&gt;-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>-->
-
-
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
 
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar, #content').toggleClass('active');
-            $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
-    });
-</script>
+      function confirmDelete(id, firstName) {
+          var r = window.confirm("Confirm deleting user: " + firstName);
+          if (r == true) {
+              window.location.href = "userHelper.inc.php?id="+id+"&action=delete";
+          }
+      }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      $(document).ready(function () {
+          $("#sidebar").mCustomScrollbar({
+              theme: "minimal"
+          });
 
+          $('#sidebarCollapse').on('click', function () {
+              $('#sidebar, #content').toggleClass('active');
+              $('.collapse.in').toggleClass('in');
+              $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+          });
+      });
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

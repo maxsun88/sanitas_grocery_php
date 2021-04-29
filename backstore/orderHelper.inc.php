@@ -22,12 +22,12 @@ if($action=="insert"){
     //Obtaining a new id for this Order inserted
     $OrdersSameCat = getOrdersByCategory($_POST["category"]);
     if(count($OrdersSameCat) > 0){
-        $lastId = end($ordersSameCat)["@attributes"]["id"];
+        $lastId = end($OrdersSameCat)["@attributes"]["id"];
         $newId = $lastId[0] . strval(intval(substr($lastId, 1))+1);
     }else{//if this is the first Order of this category, create a brand new id
         $newId = $_POST["category"] . "1";
         switch ($_POST["category"]) {
-            case "veg":
+            case "vegetables":
                 $newId = "V1";
                 break;
             case "dairy":
@@ -49,6 +49,7 @@ if($action=="insert"){
     $newOrder["@attributes"]["category"] = $_POST["category"];
     $newOrder["@attributes"]["id"] = $newId;
     $newOrder["name"] = $_POST["name"];
+    $newOrder["category"] = $_POST["category"];
     $newOrder["price"] = $_POST["price"];
     $newOrder["quantity"] = $_POST["quantity"];
 
@@ -58,7 +59,5 @@ if($action=="insert"){
     writeOrders($orderList);
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
-//header("location: order-management.php");
+
+header("location: order-management.php");

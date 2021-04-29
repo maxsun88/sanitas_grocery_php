@@ -24,4 +24,20 @@
     <city>Laval</city>
     <postalCode>H1N2C3</postalCode>
   </user>
+  <user category="admin" id="A2">
+    <title>Mr.</title>
+    <firstName>Jerry</firstName>
+    <lastName>Labowski</lastName>
+    <streetAddress>555 William Avenue</streetAddress>
+    <city>Montréal</city>
+    <postalCode>1A2 3E3</postalCode>
+  </user>
+  <user category="customer" id="C3">
+    <title>Mr.</title>
+    <firstName>William</firstName>
+    <lastName>TheGreat</lastName>
+    <streetAddress>123 Old Village</streetAddress>
+    <city>Montréal</city>
+    <postalCode>A2D 3G4</postalCode>
+  </user>
 </users>

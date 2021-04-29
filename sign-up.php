@@ -44,7 +44,7 @@
             $user_doc = new DOMDocument();
             $user_doc->preserveWhiteSpace = false;
             $user_doc->formatOutput = true;
-            $user_doc->load("Page9.xml");
+            $user_doc->load("xml_database/Page9.xml");
             print $user_doc->saveXML();
 
             foreach ($users AS $element)
@@ -103,7 +103,7 @@
 
             $user_doc->getElementsByTagName('users')->item(0)->appendChild($new_user);
 
-            $user_doc->save("Page9.xml");
+            $user_doc->save("xml_database/Page9.xml");
 
 
             echo "<script>alert('Account created successfully.'); document.location='index.php'</script>";

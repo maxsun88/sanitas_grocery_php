@@ -9,13 +9,14 @@ $orderList = getOrdersXML();
 		<meta charset = "utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Bootstrap CSS CDN -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-		<!-- Our Custom CSS -->
-		<link rel="stylesheet" href="../assets/Backstore/backstore.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    	<!-- Our Custom CSS -->
+    	<link rel="stylesheet" href="../assets/Backstore/backstore.css">
 
-		<!-- Font Awesome JS -->
-		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    	<!-- Font Awesome JS -->
+    	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	</head>
 	<body>
 	
@@ -60,9 +61,11 @@ $orderList = getOrdersXML();
 										<input class="form-control me-2" style="width: 300px" type="search" placeholder="Search" aria-label="Search">
 										<button class="btn btn-outline-success" type="submit">Search</button>
 										
+										
 									</form>
-									
+									<a style="font-size: 2rem" class="btn" href="edit_add_order.php?action=insert"><i class="far fa-plus-square"></i></a>
 								</div>
+								
 								
 								<div class="table-responsive-lg">
 								<table class="table table-bordered table-hover">
@@ -95,7 +98,6 @@ $orderList = getOrdersXML();
 									<?php endforeach; ?>
 									</tbody>
 								</table>
-								<button onclick="writeOrders()" class="btn btn-outline-secondary" type="submit">Save</button>
 								</div>
 							</div>
 						</div>
@@ -107,7 +109,7 @@ $orderList = getOrdersXML();
 	<script type="text/javascript">
 
       function confirmDelete(id, name) {
-          var r = window.confirm("Confirm deleting product: " + name);
+          var r = window.confirm("Confirm deleting order: " + name);
           if (r == true) {
               window.location.href = "orderHelper.inc.php?id="+id+"&action=delete";
           }

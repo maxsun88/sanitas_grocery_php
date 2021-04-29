@@ -51,7 +51,4 @@ if($action=="insert"){
     writeUsers($userList);
 }
 
-if (isset($_SERVER["HTTP_REFERER"])) {
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
-}
 header("location: Page9.php");

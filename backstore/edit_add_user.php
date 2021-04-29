@@ -1,3 +1,18 @@
+<?php
+require_once '../xml_database/simplexml_P9.php';
+$id = isset($_GET["id"]) ? $_GET["id"]:null;
+$xml = simplexml_load_file("../xml_database/Page9.xml") or die("Error: Cannot create object");
+$userList = json_decode(json_encode((array)$xml), TRUE)["user"];
+$list = getUserByID($id);
+
+$title = isset($_GET["id"]) ? $list['title']: null;
+$category = isset($_GET["id"]) ? $list['category']: null;
+$firstName = isset($_GET["id"]) ? $list['firstName']: null;
+$lastName = isset($_GET["id"]) ? $list['lastName']: null;
+$streetAddress = isset($_GET["id"]) ? $list['streetAddress']: null;
+$city = isset($_GET["id"]) ? $list['city']: null;
+$postalCode = isset($_GET["id"]) ? $list['postalCode']: null;
+?>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +50,7 @@
                 <a href="Page9.php">Users</a>
             </li>
             <li>
-                <a href="">Orders</a>
+                <a href="order-management.php">Orders</a>
             </li>
         </ul>
     </nav>
@@ -50,6 +65,10 @@
                             User Edit
                         </div>
                         <div class="card-body">
+                            <?php
+                                $action = isset($_GET['action']) ? $_GET['action'] : null;
+                            ?>
+                            <form action="userHelper.inc.php?action=<?php echo $action;?>" method="post">
                             <div class="d-flex justify-content-between my-3">
                               <form>
 
@@ -58,7 +77,7 @@
                                         <div class="row">
                                           <div class="col-sm">
                                             <label for="title">Title</label>
-                                            <select class="form-control" name="title">
+                                            <select class="form-control" name="title" value="<?php echo $title;?>">
           							                       <option> Mr. </option>
           							                       <option> Mrs. </option>
           							                       <option> Miss </option>
@@ -67,30 +86,36 @@
                                           </div>
                                           <div class="col-sm">
                                             <label for="firstName">First Name</label>
-                                            <input type = "text" class="form-control" name = "firstName"  size="50" required placeholder="Jerry"></input>
+                                            <input type = "text" class="form-control" name = "firstName"  size="50" required placeholder="Jerry"  value="<?php echo $firstName;?>"></input>
                                           </div>
                                           <div class="col-sm">
                                             <label for="lastName">Last Name</label>
-                                            <input type = "text" class="form-control" name = "lastName" size="50" required placeholder="Labowski"></input>
+                                            <input type = "text" class="form-control" name = "lastName" size="50" required placeholder="Labowski" value="<?php echo $lastName;?>"></input>
                                           </div>
+                                          <div class="col-sm">
+                                          <label for="category">Category</label>
+                                            <select class="form-control" name="category" value="<?php echo $list["@attributes"]["category"];?>">
+          							                       <option value="customer"> Customer </option>
+          							                       <option value="admin"> Admin </option>
+          						                      </select>
                                         </div>
                                       </div>
                                   </div>
-
+                                  <br>
                                 <div class="form-group">
                                   <div class="container">
                                       <div class="row">
                                         <div class="col-sm">
                                           <label for="streetAddress">Street Address</label>
-                                          <input type = "text" class="form-control" name = "streetAddress" size="50" required placeholder="555 William Wonka ave.">
+                                          <input type = "text" class="form-control" name = "streetAddress" size="50" required placeholder="555 William Wonka ave." value="<?php echo $streetAddress;?>">
                                         </div>
                                         <div class="col-sm">
                                           <label for="city">City</label>
-                                          <input class="form-control" type = "text" name = "city" size="20" required placeholder="Montréal">
+                                          <input class="form-control" type = "text" name = "city" size="20" required placeholder="Montréal" value="<?php echo $city;?>">
                                       </div>
                                       <div class="col-sm">
                                           <label for="postalCode">Postal Code</label>
-                                          <input type="text" class="form-control" name="postalCode" size="20" required placeholder="A1B 2C3">
+                                          <input type="text" class="form-control" name="postalCode" size="20" required placeholder="A1B 2C3" value="<?php echo $postalCode;?>">
                                       </div>
                                     </div>
                                 </div>
@@ -101,7 +126,7 @@
                                 <div class="container">
                                     <div class="row">
                                       <div class="col-sm">
-                                          <button type="submit" class="btn btn-dark">Make Changes</button>
+                                          <button type="submit" class="btn btn-dark">Submit</button>
                                       </div>
                                     </div>
                                   </div>
