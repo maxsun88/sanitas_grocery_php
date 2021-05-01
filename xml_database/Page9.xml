@@ -24,4 +24,12 @@
     <city>Laval</city>
     <postalCode>H1N2C3</postalCode>
   </user>
+  <user>
+    <title>Mr.</title>
+    <firstName>Ningyuan</firstName>
+    <lastName>Sun</lastName>
+    <streetAddress>3044 Rue Saint-Antoine Ouest</streetAddress>
+    <city>Montreal</city>
+    <postalCode>H4C 1A5</postalCode>
+  </user>
 </users>

@@ -90,4 +90,19 @@
       <postalCode>H1N2C3</postalCode>
     </personal>
   </user>
+  <user>
+    <login>
+      <email>maxsunsny@gmail.com</email>
+      <password>123</password>
+      <admin>False</admin>
+    </login>
+    <personal>
+      <title>Mr.</title>
+      <firstName>Ningyuan</firstName>
+      <lastName>Sun</lastName>
+      <streetAddress>3044 Rue Saint-Antoine Ouest</streetAddress>
+      <city>Montreal</city>
+      <postalCode>H4C 1A5</postalCode>
+    </personal>
+  </user>
 </users>
