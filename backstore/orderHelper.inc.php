@@ -46,15 +46,18 @@ if($action=="insert"){
     }
 
     $newOrder = array();
+//    var_dump($_POST);
     $newOrder["@attributes"]["category"] = $_POST["category"];
     $newOrder["@attributes"]["id"] = $newId;
     $newOrder["name"] = $_POST["name"];
     $newOrder["category"] = $_POST["category"];
     $newOrder["price"] = $_POST["price"];
     $newOrder["quantity"] = $_POST["quantity"];
+    var_dump($newOrder);
 
     //append new Order to the OrderList in memory
     $orderList[] = $newOrder;
+    var_dump($orderList);
 
     writeOrders($orderList);
 }

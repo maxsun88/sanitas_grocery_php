@@ -74,7 +74,7 @@ $quantity= isset($_GET["id"]) ? $list['quantity']: null;
                                         <div class="row">
                                           <div class="col-sm">
                                             <label for="name">Name</label>
-                                            <input name="text" id="name" name="name" class="form-control" placeholder="Name" value="<?php echo $name;?>"></input>
+                                            <input id="name" name="name" class="form-control" placeholder="Name" value="<?php echo $name;?>"></input>
                                           </div>
                                           <div class="col-sm">
                                             <label for="category">Category</label>
