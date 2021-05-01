@@ -85,7 +85,9 @@ function addItemsToCart(){
 		cartRow.innerHTML = cartRowContent;
 		cartItems.append(cartRow);
 		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem);
+		console.log("add remove item event listener");
 		cartRow.getElementsByClassName('quantity')[0].addEventListener('click', productPrice);
+		console.log("add quantity change event listener");
 	}
 	productPrice();
 }
