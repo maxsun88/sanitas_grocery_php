@@ -62,4 +62,21 @@ if($action=="insert"){
     writeProducts($productList);
 }
 
+if ($action=="edit") {
+    foreach($productList as $key => $item) {
+        if($item["@attributes"]["id"]==$product_id){
+            $productList[$key]["@attributes"]["category"] = $_POST["category"];
+            $productList[$key]["name"] = $_POST["name"];
+            $productList[$key]["price"] = $_POST["price"];
+            $productList[$key]["unit"] = $_POST["unit"];
+            $productList[$key]["description"] = $_POST["description"];
+            $productList[$key]["types"] = $_POST["types"];
+            $productList[$key]["img"] = $_POST["img"];
+            $productList[$key]["stock"] = $_POST["stock"];
+            break;
+        }
+    }
+    writeProducts($productList);
+}
+
 header("location: product-management.php");

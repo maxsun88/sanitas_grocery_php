@@ -1,3 +1,21 @@
+<?php
+    require_once '../xml_database/simplexml.php';
+    $productList = getProducts();
+
+    $id = isset($_GET["id"]) ? $_GET["id"]:null;
+    $list = getProductById($id);
+
+    $name = isset($_GET["id"]) ? $list['name']:null;
+    $category = isset($_GET["id"]) ? $list["@attributes"]['category']: null;
+    $price = isset($_GET["id"]) ? $list['price']:null;
+    $unit = isset($_GET["id"]) ? $list['unit'] : null;
+    $description = isset($_GET["id"]) ? $list['description']:" ";
+    $types = isset($_GET["id"]) ? $list['types']:null;
+    $img = isset($_GET["id"]) ? $list['img']:null;
+    $stock = isset($_GET["id"]) ? $list['stock']:null;
+    var_dump($description)
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -50,25 +68,26 @@
                         <div class="card-body">
                             <?php
                                 $action = isset($_GET['action']) ? $_GET['action'] : null;
+                                $id = isset($_GET['id']) ? $_GET['id'] : null;
                             ?>
-                            <form action="productHelper.inc.php?action=<?php echo $action;?>" method="post">
+                            <form action="productHelper.inc.php?action=<?php echo $action;?>&id=<?php echo $id;?>" method="post">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Product Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="name" placeholder="">
+                                        <input type="text" class="form-control" name="name" placeholder="" value="<?php echo $name; ?>"></input>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Category</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="category">
-                                            <option value="veg">Fruits & Vegetables</option>
-                                            <option value="dairy">Dairy Products</option>
-                                            <option value="meat">Meat & Poultry</option>
-                                            <option value="bakery">Bakery</option>
-                                            <option value="seafood">Sea Food</option>
-                                            <option value="frozen">Frozen Products</option>
+                                        <select class="form-control" name="category" placeholder="">
+                                            <option <?php if($category=='veg') :?>selected<?php endif; ?>  value="veg">Fruits & Vegetables</option>
+                                            <option <?php if($category=='dairy') :?>selected<?php endif; ?> value="dairy">Dairy Products</option>
+                                            <option <?php if($category=='meat') :?>selected<?php endif; ?> value="meat">Meat & Poultry</option>
+                                            <option <?php if($category=='bakery') :?>selected<?php endif; ?> value="bakery">Bakery</option>
+                                            <option <?php if($category=='seafood') :?>selected<?php endif; ?> value="seafood">Sea Food</option>
+                                            <option <?php if($category=='frozen') :?>selected<?php endif; ?> value="frozen">Frozen Products</option>
                                         </select>
                                     </div>
                                 </div>
@@ -76,40 +95,40 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Price</label>
                                     <div class="col-sm-10">
-                                        <input type="number" step="0.01" class="form-control" name="price" placeholder="">
+                                        <input type="number" step="0.01" class="form-control" name="price" placeholder="" value="<?php echo $price; ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Unit</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="unit" placeholder="">
+                                        <input type="text" class="form-control" name="unit" placeholder="" value="<?php echo $unit; ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Image URL</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="img" placeholder="">
+                                        <input type="text" class="form-control" name="img" placeholder="" value="<?php echo $img; ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Types</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="types" placeholder="e.g. Mexico;Malaysia;Peru">
+                                        <input type="text" class="form-control" name="types" placeholder="e.g. Mexico;Malaysia;Peru" value="<?php echo $types; ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Product Description</label>
-                                    <textarea class="form-control" name="description" rows="3"></textarea>
+                                    <textarea class="form-control" name="description" rows="3" value=""><?php echo $description;?></textarea>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Stock</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="stock" placeholder="">
+                                        <input type="number" class="form-control" name="stock" placeholder="" value="<?php echo $stock; ?>">
                                     </div>
                                 </div>
 

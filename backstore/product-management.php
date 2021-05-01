@@ -97,7 +97,7 @@
                                       <td>
                                         <form>
                                           <a class="btn btn-primary" href="#"><i class="fas fa-eye"></i></a>
-                                          <a class="btn btn-success" href="#"><i class="fas fa-edit"></i></a>
+                                          <a class="btn btn-success" href="product-edit.php?id=<?php echo $item["@attributes"]["id"]; ?>&action=edit"><i class="fas fa-edit"></i></a>
                                           <a class="btn btn-danger" href="javascript:confirmDelete('<?php echo $item["@attributes"]["id"];?>' , '<?php echo $item["name"];?>') ">
                                             <i class="fas fa-trash-alt"></i>
                                           </a>

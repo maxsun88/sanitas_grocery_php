@@ -36,15 +36,6 @@
     <img>null</img>
     <stock>512</stock>
   </product>
-  <product category="seafood" id="S5">
-    <name>Canadian Atlantic Salmon Fillet</name>
-    <price>4.99</price>
-    <unit>each</unit>
-    <description>example</description>
-    <types>normal;extra</types>
-    <img>assets/Page2/imgs/salmon.jpg</img>
-    <stock>100</stock>
-  </product>
   <product category="seafood" id="S6">
     <name>Crab flavoured pollock flakes</name>
     <price>12.3</price>
@@ -55,7 +46,7 @@
     <stock>36</stock>
   </product>
   <product category="seafood" id="S7">
-    <name>South American steelhead</name>
+    <name>North American steelhead</name>
     <price>12.4</price>
     <unit>each</unit>
     <description>example</description>
@@ -279,7 +270,7 @@
     <img>assets/Page2/imgs/cucumber.jpg</img>
     <stock>100</stock>
   </product>
-   <product category="bakery" id="B1">
+  <product category="bakery" id="B1">
     <name>French Baguette</name>
     <price>3.19</price>
     <unit>each</unit>
