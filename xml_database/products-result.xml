@@ -304,7 +304,7 @@
     <description>Example</description>
     <types>Classic</types>
     <img>assets/Page2/imgs/Croissants.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B4">
     <name>Plain bagels</name>
@@ -313,7 +313,7 @@
     <description>Example</description>
     <types>Plain</types>
     <img>assets/Page2/imgs/PlainBagel.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B5">
     <name>Cinnamon Bagels</name>
@@ -322,7 +322,7 @@
     <description>Example</description>
     <types>Cinnamon</types>
     <img>assets/Page2/imgs/CinnamonBagel.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B6">
     <name>Cupcakes</name>
@@ -331,7 +331,7 @@
     <description>Example</description>
     <types>Sprinkles;Chocolate</types>
     <img>assets/Page2/imgs/Cupcakes.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B7">
     <name>White Kaiser Rolls</name>
@@ -340,7 +340,7 @@
     <description>Example</description>
     <types>White</types>
     <img>assets/Page2/imgs/KaiserRolls.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B8">
     <name>White Bread</name>
@@ -349,7 +349,7 @@
     <description>Example</description>
     <types>White</types>
     <img>assets/Page2/imgs/White_bread.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B9">
     <name>Brown Bread</name>
@@ -358,7 +358,7 @@
     <description>Example</description>
     <types>Brown</types>
     <img>assets/Page2/imgs/Brown_Bread.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B10">
     <name>Artisan Bread</name>
@@ -367,7 +367,7 @@
     <description>Example</description>
     <types>Classic</types>
     <img>assets/Page2/imgs/ArtisanBread.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B11">
     <name>Candy donuts</name>
@@ -376,7 +376,7 @@
     <description>Example</description>
     <types>Candy</types>
     <img>assets/Page2/imgs/Candy_donuts.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B12">
     <name>Apple donuts</name>
@@ -385,7 +385,7 @@
     <description>Example</description>
     <types>Apple</types>
     <img>assets/Page2/imgs/Apple_Donuts.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B13">
     <name>Jam Donuts</name>
@@ -394,7 +394,7 @@
     <description>Example</description>
     <types>Strawberry;Raspberry</types>
     <img>assets/Page2/imgs/Jam_donut.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B14">
     <name>Cinnamon Rolls</name>
@@ -403,7 +403,7 @@
     <description>Example</description>
     <types>Classic</types>
     <img>assets/Page2/imgs/Cinnamon_Rolls.png</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B15">
     <name>Brownies</name>
@@ -412,7 +412,7 @@
     <description>Example</description>
     <types>Chocolate</types>
     <img>assets/Page2/imgs/Brownies.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
   <product category="bakery" id="B16">
     <name>Pumpkin pie</name>
@@ -421,6 +421,6 @@
     <description>Example</description>
     <types>Classic</types>
     <img>assets/Page2/imgs/Pumpkin_pie.jpg</img>
-    <stock/>
+    <stock>100</stock>
   </product>
 </products>
