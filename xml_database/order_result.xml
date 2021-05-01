@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <orders>
   <order id="V01" category="vegetables">
-    <name>Banana</name>
-    <category>Vegetables</category>
+    <name>Apple</name>
+    <category>vegetables</category>
     <price>1.29</price>
-    <quantity>512</quantity>
+    <quantity>500</quantity>
   </order>
   <order id="D01" category="dairy">
     <name>Milk - 1L</name>
@@ -30,16 +30,10 @@
     <price>31.29</price>
     <quantity>512</quantity>
   </order>
-  <order id="F01" category="frozen">
-    <name>Frozen Pizza</name>
-    <category>Frozen</category>
-    <price>5.6</price>
-    <quantity>512</quantity>
-  </order>
-  <order id="V2" category="vegetables">
-    <name>sf</name>
-    <category>vegetables</category>
-    <price>11</price>
+  <order id="F1" category="frozen">
+    <name>Pizza</name>
+    <category>frozen</category>
+    <price>12</price>
     <quantity>123</quantity>
   </order>
 </orders>

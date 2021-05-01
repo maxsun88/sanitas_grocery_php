@@ -66,8 +66,9 @@ $quantity= isset($_GET["id"]) ? $list['quantity']: null;
                             <div class="d-flex justify-content-between my-3">
                             <?php
                               $action = isset($_GET['action']) ? $_GET['action'] : null;
+                              $id = isset($_GET['id']) ? $_GET['id'] : null;
                             ?>
-                              <form method="post" action="orderHelper.inc.php?action=<?php echo $action;?>">
+                              <form method="post" action="orderHelper.inc.php?action=<?php echo $action;?>&id=<?php echo $id;?>">
 
                                   <div class="form-group">
                                     <div class="container">

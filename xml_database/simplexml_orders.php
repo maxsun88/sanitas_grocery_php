@@ -4,13 +4,13 @@
 <?php
 
 function getOrders(){
-    $xml=simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file("../xml_database/order_result.xml") or die("Error: Cannot create object");
     return json_decode(json_encode((array)$xml), TRUE)["order"];
 }
 
 function getOrdersXML()
 {
-    $xml=simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
+    $xml=simplexml_load_file("../xml_database/order_result.xml") or die("Error: Cannot create object");
     return $xml;
 }
 

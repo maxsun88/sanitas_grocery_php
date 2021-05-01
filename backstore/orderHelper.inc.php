@@ -46,19 +46,31 @@ if($action=="insert"){
     }
 
     $newOrder = array();
-//    var_dump($_POST);
     $newOrder["@attributes"]["category"] = $_POST["category"];
     $newOrder["@attributes"]["id"] = $newId;
     $newOrder["name"] = $_POST["name"];
     $newOrder["category"] = $_POST["category"];
     $newOrder["price"] = $_POST["price"];
     $newOrder["quantity"] = $_POST["quantity"];
-    var_dump($newOrder);
 
     //append new Order to the OrderList in memory
     $orderList[] = $newOrder;
-    var_dump($orderList);
 
+    writeOrders($orderList);
+}
+
+if($action=="edit"){
+    foreach($orderList as $key => $item) {
+        if($item["@attributes"]["id"]==$order_id){
+            $orderList[$key]["@attributes"]["category"] = $_POST["category"];
+            $orderList[$key]["name"] = $_POST["name"];
+            $orderList[$key]["category"] = $_POST["category"];
+            $orderList[$key]["price"] = $_POST["price"];
+            $orderList[$key]["quantity"] = $_POST["quantity"];
+            break;
+        }
+    }
+    var_dump($orderList);
     writeOrders($orderList);
 }
 
