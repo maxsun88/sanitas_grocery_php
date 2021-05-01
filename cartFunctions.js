@@ -64,12 +64,12 @@ function addItemsToCart(){
 											<div>
 												<h5 class="p-name">${productList[i][0]}</h5>
 												<p class="mb-2 text-muted text-uppercase small weight">190g avg.</p>
-												<p class="mb-2 text-muted text-uppercase small price-per-kg">$${productList[i][1]} /kg</p>
-												<p class="mb-2 text-muted text-uppercase small price-per-lb">$${(productList[i][1]*2.20462).toFixed(2)} /lb</p>
+												<p class="mb-2 text-muted text-uppercase small price-per-kg">$${(productList[i][1]*2.20462).toFixed(2)} /kg</p>
+												<p class="mb-2 text-muted text-uppercase small price-per-lb">$${productList[i][1]} /lb</p>
 											</div>
 											<div>
 												<div class="def-number-input number-input safari_only mb-0 w-100">
-													<input class="form-control" class="quantity" min="1" id="quantity${i}" name="quantity" value="${productList[i][3]}" type="number" onclick="productPrice()">
+													<input class="form-control" class="quantity" min="1" id="quantity${i}" name="quantity" value="${productList[i][3]}" type="number">
 												</div>
 											</div>
 										</div>
@@ -85,6 +85,7 @@ function addItemsToCart(){
 		cartRow.innerHTML = cartRowContent;
 		cartItems.append(cartRow);
 		cartRow.getElementsByClassName('cart-remove-btn')[0].addEventListener('click', removeItem);
+		cartRow.getElementsByClassName('quantity')[0].addEventListener('click', productPrice);
 	}
 	productPrice();
 }
@@ -114,10 +115,11 @@ function purchaseClicked(){
 }
 
 function productPrice(){
+	console.log("productPrice called");
 	var pricePerUnitList = document.getElementsByClassName('price-per-kg');
 	var totalPerProductList = new Array(pricePerUnitList.length);
-	var i = 0;
-	for (i; i < totalPerProductList.length; i++){
+	for (var i = 0; i < totalPerProductList.length; i++){
+		console.log("setting price for product" + i);
 		totalPerProductList[i] = parseFloat(pricePerUnitList[i].innerText.substring(1)) * ((document.getElementsByClassName('quantity')[i] == undefined)? 1: document.getElementsByClassName('quantity')[i].value);
 		document.getElementsByClassName("summary")[i].innerText = "$" + totalPerProductList[i].toFixed(2);
 	}
@@ -125,12 +127,15 @@ function productPrice(){
 }
         
 function cartPrice(){
+	console.log("cartPrice called");
 	var productPriceList = document.getElementsByClassName('price');
-	var i;
+	
 	var sum = 0.0;
-	for(i = 0; i < productPriceList.length; i++){
+	for(var i = 0; i < productPriceList.length; i++){
+		console.log("adding product " + i + " to sum");
 		sum += parseFloat(productPriceList[i].innerText.substring(1));
 	}
+	console.log("setting subtotals and total prices");
 	var gst = sum * 0.05;
 	var qst = sum * 0.15;
 	var total = sum + gst + qst;
