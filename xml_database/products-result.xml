@@ -6,7 +6,7 @@
     <unit>lb</unit>
     <description>Healthy fruit</description>
     <types>Mexico;Malaysia;Peru</types>
-    <img>null</img>
+    <img>assets/Page2/imgs/bananapage2.jpg</img>
     <stock>512</stock>
   </product>
   <product category="dairy" id="D1">
@@ -150,7 +150,143 @@
     <unit>10</unit>
     <description>Very good oranges</description>
     <types>Mexico</types>
-    <img/>
+    <img>assets/Page2/imgs/orange.jpg</img>
     <stock>100</stock>
   </product>
+    <product category="veg" id="V3">
+    <name>White Potato</name>
+    <price>1.49</price>
+    <unit>10</unit>
+    <description>example</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/potato.jpg</img>
+    <stock>100</stock>
+  </product>
+    <product category="veg" id="V4">
+    <name>Honeycrisp Apple</name>
+    <price>3.99</price>
+    <unit>10</unit>
+    <description>Very good apples</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/apple.jpg</img>
+    <stock>100</stock>
+    </product>
+  <product category="veg" id="V5">
+    <name>Strawberries</name>
+    <price>1.32</price>
+    <unit>10</unit>
+    <description>Very good strawberries</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/strawberry.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V6">
+    <name>Tomato</name>
+    <price>8.80</price>
+    <unit>10</unit>
+    <description>Very good tomatoes</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/tomato.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V7">
+    <name>Spanish Onion</name>
+    <price>3.28</price>
+    <unit>10</unit>
+    <description>Very good onions</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/onion.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V8">
+    <name>Grapes</name>
+    <price>6.59</price>
+    <unit>10</unit>
+    <description>Very good grapes</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/grapes.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V9">
+    <name>Carrots</name>
+    <price>1.99</price>
+    <unit>1</unit>
+    <description>Very good carrots</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/carrots.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V10">
+    <name>Broccoli</name>
+    <price>3.49</price>
+    <unit>10</unit>
+    <description>Very good broccoli</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/broccoli.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V11">
+    <name>Grapes</name>
+    <price>6.59</price>
+    <unit>10</unit>
+    <description>Very good grapes</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/grapes.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V12">
+    <name>Watermelon</name>
+    <price>5.99</price>
+    <unit>1</unit>
+    <description>Very good watermelons</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/watermelon.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V13">
+    <name>Yellow Pepper</name>
+    <price>15.41</price>
+    <unit>10</unit>
+    <description>Very good peppers</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/yellowpepper.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V14">
+    <name>Lemon</name>
+    <price>1.29</price>
+    <unit>1</unit>
+    <description>Very good lemons</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/lemon.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V15">
+    <name>GLettuce</name>
+    <price>2.99</price>
+    <unit>1</unit>
+    <description>Very good lettuce</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/lettuce.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V16">
+    <name>Avocado</name>
+    <price>1.99</price>
+    <unit>1</unit>
+    <description>Very good avocados</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/avocado.jpg</img>
+    <stock>100</stock>
+  </product>
+  <product category="veg" id="V17">
+    <name>Cucumber</name>
+    <price>1.33</price>
+    <unit>1</unit>
+    <description>Very good cucumbers</description>
+    <types>Mexico</types>
+    <img>assets/Page2/imgs/cucumber.jpg</img>
+    <stock>100</stock>
+  </product>
+  
 </products>
