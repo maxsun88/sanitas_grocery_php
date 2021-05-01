@@ -49,7 +49,13 @@
 
 			window.onload = function() {
 				if(myStorage.getItem("origin") !== window.location.href){
-       			myStorage.clear();
+					if(myStorage.getItem("product") == null){
+						myStorage.clear();
+					}else{
+						var productList = myStorage.getItem("product");
+       					myStorage.clear();
+						myStorage.setItem("product", productList)
+					}
     			}
    			var quantity1 = myStorage.getItem("qty");
    			console.log("onload " + quantity1);
