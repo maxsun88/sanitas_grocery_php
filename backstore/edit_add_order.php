@@ -1,7 +1,7 @@
 <?php
 require_once '../xml_database/simplexml_orders.php';
 $id = isset($_GET["id"]) ? $_GET["id"]:null;
-$xml = simplexml_load_file("../xml_database/orders.xml") or die("Error: Cannot create object");
+$xml = simplexml_load_file("../xml_database/order_result.xml") or die("Error: Cannot create object");
 $orderList = json_decode(json_encode((array)$xml), TRUE)["order"];
 $list = getOrderByID($id);
 $name = isset($_GET["id"]) ? $list['name']: null;
